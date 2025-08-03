@@ -1,0 +1,244 @@
+Delivered-To: sferg989@gmail.com
+Received: by 2002:a05:651c:1b12:b0:32c:f8ba:9bb3 with SMTP id ed18csp1358031ljb;
+        Fri, 25 Jul 2025 14:02:02 -0700 (PDT)
+X-Received: by 2002:a05:6a20:7491:b0:21c:fbf0:21bb with SMTP id adf61e73a8af0-23d70171d80mr5746989637.24.1753477322392;
+        Fri, 25 Jul 2025 14:02:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1753477322; cv=none;
+        d=google.com; s=arc-20240605;
+        b=lmowyFosy4LhXjMsth+k54AGkjdu1CiC0SN83kkW/KLqg/ucICWuWiyZwtqxgj1ZBX
+         QkccovTqJ/mUMaJUMOg1M72yR7+PldylYhWIDUteBY4kxgk3UeqNX5f90pVU8mWxWNVi
+         9QtgU8U+jbpHEhQNF/0/fxrdWbq2CRWcyGijMoVWJgLxCHXzKAh2O7EBK6U/rcMEysEH
+         vR8n1z+VdOgTNEck9XQKKotBI80nSI5q8HZslgRW4wfvC3bpu7axBksxccL4ai1lHcHJ
+         +ltTEu1N6BraFhQuv98uRjukwsSMpSudpUwAqrdZ0PGe1O4TmDQigGdFJk+iC/hS3yt/
+         c8Tg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=N2Dw5Kvo+MFgEgGnPW9RNMcqXUbpNcN1EnjVkaRFclw=;
+        fh=4RzCKIOMpvN9tQK7RVgZihlh4Wbp0GAJKfRjqTkfPO0=;
+        b=IgfGA9SuZ05sA1v+UShkit451eDtEHrFJ784MxmbnGtCMS9X8+PVadoRdQ2SfAuGSh
+         TBh2qV5dnNrFZiZcv2LOkBD5SP+j+RsOyJg4/IyyOYnZxM0S3RLM0XOk5+KqmSVvLRq8
+         M6vy2w8SfI4EaTsQawke09s+fptXQw5/D9A4KD7AA47S4wBS6jn2QkwVjGbHqEZOqAw5
+         +RD6uLD7AsqZNHDcOUamOx/WWTTpKgiVBY7mjbGjnHXYgBwH70oMq6bCWV+00o0w+lab
+         izvyqI8tdukB5TkzQQFMOPsYUkpK7udkhfZZZAL0qyviYPKHAMN9JwzZnPw7dKUTFSZ8
+         NQBA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@fcwisconsinsoccer-com.20230601.gappssmtp.com header.s=20230601 header.b="zYr/z3C+";
+       spf=pass (google.com: domain of leanne.talbert@fcwisconsinsoccer.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=leanne.talbert@fcwisconsinsoccer.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=fcwisconsinsoccer.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <leanne.talbert@fcwisconsinsoccer.com>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id 41be03b00d2f7-b3f7f67c9a6sor405768a12.7.2025.07.25.14.02.02
+        for <sferg989@gmail.com>
+        (Google Transport Security);
+        Fri, 25 Jul 2025 14:02:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of leanne.talbert@fcwisconsinsoccer.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@fcwisconsinsoccer-com.20230601.gappssmtp.com header.s=20230601 header.b="zYr/z3C+";
+       spf=pass (google.com: domain of leanne.talbert@fcwisconsinsoccer.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=leanne.talbert@fcwisconsinsoccer.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=fcwisconsinsoccer.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=fcwisconsinsoccer-com.20230601.gappssmtp.com; s=20230601; t=1753477321; x=1754082121; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=N2Dw5Kvo+MFgEgGnPW9RNMcqXUbpNcN1EnjVkaRFclw=;
+        b=zYr/z3C+4Yfg8ErSi57aFXzEbkUz+rteUeMOe8FgZ3jkq5kanQg+Uk0tZJoC/dXBvs
+         HrcZmOztKYoQg0+S/HQlKGi1ly7+1W/p3avUbruPzbHtXebZFe2GifrkxOc7kU/oryED
+         PP4RhDf1NBgmf9j71aFR8qpjEZ90d0LpqCtLcBBbOITlqgMypNq4/j11rIxJnW7S0lSW
+         kSqgqwTRfmQ48AalpQrn0/wPCs0lIenMCEh3QnLcdhOj/bwswMkaxESdovJCNL2dI38m
+         rNGKZbuG9yU9dE69zkQnO4z2AYlK5KmFMPhHWfLyN8lpV+kRpEBRrsx9MV9FzP3fOMqk
+         OhqQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1753477321; x=1754082121;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=N2Dw5Kvo+MFgEgGnPW9RNMcqXUbpNcN1EnjVkaRFclw=;
+        b=fqOTUWkGvqmz6WbB2hiqonZXJVA4c6L3YYENXwzqCJeajY/NXGDkoEUZx677XTDY0g
+         m919vs/w2f2wbV1qeWOYFkHZKtjJgmbu8dZSUzFE0ZySJEys29HWr109H2FCA+WcP8/b
+         M5FvM/ZVc9b+zy1fGr6cgGfyZcy+LIlgwSedstcXuunRmCknIlA8gxEUGKykgzC6YHse
+         6OB3Bnmy5XKszeZC5yUWnPrrqtgPuS0SPFhX0siBCjZI8cu5c2ChSNM9ppd9Q6YYuRmD
+         2ddL43rOBYOH/6ljHroBOOWUZ25lI2MgkBpblPGxcFb4trsMfMB88u5rZ7ilxzKqFbtM
+         zItA==
+X-Gm-Message-State: AOJu0Yw69OsuYd8uPanPS+It/9SUzJrh94NyKcg+4FaKHDcFwb8HjsBP
+	kLOfxkya2QH51Q+A9HzK6bUKaYpfiVb+8h+8jaY4qTz7A5JFS+kuTWJ7hC+zRHSyTpnY/+SShx8
+	45aZyuXMZbZSisSGPuHp4+/sXwZcHdX6s6/FsSLc4156IRgNg9PzmzsbKx9Kn
+X-Gm-Gg: ASbGncuBLUAbuEbZ8bdmXcKL/YCm4dto8SbMltUxDFQC0qbUGA27V8BDgRr7sxKIcqR
+	pCydNkNkgjWbh+9zWc7UTIch7m0q+ixDB78t+4IcoZPJTSuIu6yFOM1n6FNkhTrN6dwhZBvy1oM
+	tqPP42AMFPQSSdwQbM3K/+X88t8e+BXYyWVFRFnGZfXo50bbEFu2MNqNAh4RzrCSLJIlj3kaTak
+	PchIb4odcrbhm1eSpKsJPO2tPK5X4EpP6+zRKxCHw==
+X-Google-Smtp-Source: AGHT+IGRCipMjw1kuTyE59bBAv74zMbXxGMw8VfjO6DCsAUq17KW9tDgOExtuJXJMso11BlgpOjnc+GGSBG7ucAc5h4=
+X-Received: by 2002:a17:90b:1b09:b0:31c:bfac:9e25 with SMTP id
+ 98e67ed59e1d1-31e7788e591mr5322680a91.14.1753477321607; Fri, 25 Jul 2025
+ 14:02:01 -0700 (PDT)
+MIME-Version: 1.0
+From: "FCW Boys Adm. Leanne Talbert" <leanne.talbert@fcwisconsinsoccer.com>
+Date: Fri, 25 Jul 2025 16:01:26 -0500
+X-Gm-Features: Ac12FXw5v3C8Y8Rpxj5hsq_PTWK7X_1ONW6dFEZipNb_Evvw_NUGuk2aEhEKyaU
+Message-ID: <CAFNS6dh8ZDA=AWz=HLz60m9JoV2-qPji_DO5g3YEzegzbsiJOA@mail.gmail.com>
+Subject: 13UB RCP
+To: Stephen Ferguson <sferg989@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000e05cc2063ac740ed"
+
+--000000000000e05cc2063ac740ed
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Steve,
+
+I wanted to take a few minutes to explain how the 13UB RCP team is
+structured this year.
+
+The 13UB RCP is made up of all 13UB players from both Germantown and our
+West location. The =E2=80=9CWest=E2=80=9D players are full-time members of =
+your team, and
+all communication will go through the usual team channels=E2=80=94just as i=
+f they
+have always been part of your team, because they are a part of your team.
+
+Please also note that the West 13UB boys will have the opportunity to play
+with the West 14UB team as well. I will be working on the schedule to make
+sure that this can happen smoothly and that players can participate with
+both teams when possible.
+
+Additionally, the 13UB RCP team will compete at the 14UB level. This
+adjustment is necessary because neither our Germantown nor our West 13UB
+teams currently have a dedicated goalkeeper. By playing at the 14UB level,
+we will have greater flexibility: if wanted, we can use goalkeepers from
+the 14UB Germantown and West teams to support our matches.
+
+If you have any questions, please reach out at any time. Thank you for your
+flexibility and support as we make these changes to provide the best
+experience for all players!
+
+
+----
+Leanne Talbert
+FC Wisconsin
+Boys Admin.
+
+
+*#FCWPLAYINGFORWARD*
+
+*#FCWSUPERCIRRULIUM*
+
+*#FCWTALENTEDCOACHES*
+
+*#FCWPASSIONATEPLAYERS*
+
+*#FCWYOUAREFAMILY*
+
+
+
+*FCW Field (Germantown) information:*
+http://fcwisconsin.com/field-facility-location
+*Directions to our fields click* HERE
+<https://www.google.com/maps/dir//FC+Wisconsin+Soccer,+W+Fond+Du+Lac+Ave,+G=
+ermantown,+WI+53022/@43.1995956,-88.0828281,15z/data=3D!4m9!4m8!1m0!1m5!1m1=
+!1s0x8804fc2cfe6d5c05:0x6dc0f41504f03e87!2m2!1d-88.0828281!2d43.1995956!3e0=
+>
+*******
+*> FCW NORTH Field-(Ashwaubenon) Capital Credit Union Park Stadium
+<https://www.greenbay.com/directory/capital-credit-union-park/>*
+*******
+*> FCW WEST Field-(Delafield) Delafield Sports Common
+<https://www.google.com/maps/dir//Sports+Commons,+Silvernail+Rd,+Waukesha,+=
+WI+53188/@43.1646446,-88.3595744,11z/data=3D!4m9!4m8!1m0!1m5!1m1!1s0x8805b1=
+b4eb1ec9b3:0xb3cf9de13af5f6b2!2m2!1d-88.3467012!2d43.0479572!3e0?entry=3Dtt=
+u>*
+*Directions to our field click HERE
+<https://www.google.com/maps/dir//Sports+Commons,+Silvernail+Rd,+Waukesha,+=
+WI+53188/@43.1646446,-88.3595744,11z/data=3D!4m9!4m8!1m0!1m5!1m1!1s0x8805b1=
+b4eb1ec9b3:0xb3cf9de13af5f6b2!2m2!1d-88.3467012!2d43.0479572!3e0?entry=3Dtt=
+u>*
+
+--000000000000e05cc2063ac740ed
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div><div class=3D"gmail_default" style=3D"font-family:tah=
+oma,sans-serif">Hi Steve,</div><div class=3D"gmail_default" style=3D"font-f=
+amily:tahoma,sans-serif"><br></div><div class=3D"gmail_default" style=3D"fo=
+nt-family:tahoma,sans-serif"><p style=3D"box-sizing:inherit;margin:0px 0px =
+1rem;color:rgb(46,48,50);font-family:ProximaNova,Montserrat,Roboto,Helvetic=
+a,Arial,sans-serif;font-size:13.2px"><span style=3D"background-color:rgb(25=
+5,255,255)">I wanted to take a few minutes to explain how the 13UB RCP team=
+ is structured this year.</span></p><p style=3D"box-sizing:inherit;margin:0=
+px 0px 1rem;color:rgb(46,48,50);font-family:ProximaNova,Montserrat,Roboto,H=
+elvetica,Arial,sans-serif;font-size:13.2px"><span style=3D"background-color=
+:rgb(255,255,255)">The 13UB RCP is made up of all 13UB players from both Ge=
+rmantown and our West location. The =E2=80=9CWest=E2=80=9D players are=C2=
+=A0<span style=3D"box-sizing:inherit;font-weight:bolder">full-time members<=
+/span>=C2=A0of your team, and all communication will go through the usual t=
+eam channels=E2=80=94just as if they have always been part of your team, be=
+cause they are a part of your team.=C2=A0</span></p><p style=3D"box-sizing:=
+inherit;margin:0px 0px 1rem;color:rgb(46,48,50);font-family:ProximaNova,Mon=
+tserrat,Roboto,Helvetica,Arial,sans-serif;font-size:13.2px"><span style=3D"=
+background-color:rgb(255,255,255)">Please also note that the West 13UB boys=
+ will have the opportunity to play with the West 14UB team as well. I will =
+be working on the schedule to make sure that this can happen smoothly and t=
+hat players can participate with both teams when possible.</span></p><p sty=
+le=3D"box-sizing:inherit;margin:0px 0px 1rem;color:rgb(46,48,50);font-famil=
+y:ProximaNova,Montserrat,Roboto,Helvetica,Arial,sans-serif;font-size:13.2px=
+"><span style=3D"background-color:rgb(255,255,255)">Additionally, the 13UB =
+RCP team will compete at the=C2=A0<span style=3D"box-sizing:inherit;font-we=
+ight:bolder">14UB level</span>. This adjustment is necessary because neithe=
+r our Germantown nor our West 13UB teams currently have a dedicated goalkee=
+per. By playing at the 14UB level, we will have greater flexibility: if wan=
+ted, we can use goalkeepers from the 14UB Germantown and West teams to supp=
+ort our matches.</span></p><p style=3D"box-sizing:inherit;margin:0px 0px 1r=
+em;color:rgb(46,48,50);font-family:ProximaNova,Montserrat,Roboto,Helvetica,=
+Arial,sans-serif;font-size:13.2px"><span style=3D"background-color:rgb(255,=
+255,255)">If you have any questions, please reach out at any time. Thank yo=
+u for your flexibility and support as we make these changes to provide the =
+best experience for all players!</span></p><p style=3D"box-sizing:inherit;m=
+argin:0px 0px 1rem;color:rgb(46,48,50);font-family:ProximaNova,Montserrat,R=
+oboto,Helvetica,Arial,sans-serif;font-size:13.2px"><br></p></div></div><div=
+ dir=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gmail_signature"><=
+div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=
+=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr=
+"><div dir=3D"ltr"><div dir=3D"ltr">----</div><div dir=3D"ltr">Leanne Talbe=
+rt<div>FC Wisconsin</div><div>Boys Admin.</div><div><br></div><div><div><p =
+class=3D"MsoNormal"><br></p>
+
+<p class=3D"MsoNormal"><b>#FCWPLAYINGFORWARD</b></p>
+
+<p class=3D"MsoNormal"><b><span style=3D"color:red">#FCWSUPERCIRRULIUM</spa=
+n></b></p>
+
+<p class=3D"MsoNormal"><b><span style=3D"color:#4472c4">#FCWTALENTEDCOACHES=
+</span></b></p>
+
+<p class=3D"MsoNormal"><b><span style=3D"color:#538135">#FCWPASSIONATEPLAYE=
+RS</span></b></p>
+
+<p class=3D"MsoNormal"><b>#FCWYOUAREFAMILY</b></p><p class=3D"MsoNormal"><b=
+><img width=3D"69" height=3D"96" src=3D"https://ci3.googleusercontent.com/m=
+ail-sig/AIorK4wDfCqOounAcYbmAEpA73GbpsByZg9U0IVuU-1J4Qd3zqX5eNbMwd3xnYaHKFw=
+rARdLcq6Mmd90u16U"><br></b></p></div></div><div><br></div><div><font color=
+=3D"#000000"><b>FCW Field (Germantown) information:</b>=C2=A0<a href=3D"htt=
+p://fcwisconsin.com/field-facility-location" target=3D"_blank">http://fcwis=
+consin.com/field-facility-location</a><br></font></div><div><font color=3D"=
+#000000"><b>Directions to our fields click</b><a href=3D"https://www.google=
+.com/maps/dir//FC+Wisconsin+Soccer,+W+Fond+Du+Lac+Ave,+Germantown,+WI+53022=
+/@43.1995956,-88.0828281,15z/data=3D!4m9!4m8!1m0!1m5!1m1!1s0x8804fc2cfe6d5c=
+05:0x6dc0f41504f03e87!2m2!1d-88.0828281!2d43.1995956!3e0" target=3D"_blank"=
+>=C2=A0HERE</a></font></div></div></div><div><font color=3D"#000000">******=
+*</font></div><div><b><font color=3D"#38761d">&gt; FCW NORTH Field-(Ashwaub=
+enon) </font><a href=3D"https://www.greenbay.com/directory/capital-credit-u=
+nion-park/" target=3D"_blank">Capital Credit Union Park Stadium</a></b></di=
+v><div><div><font color=3D"#000000">*******</font></div><div><b><font color=
+=3D"#ff0000">&gt; FCW WEST Field-(Delafield)=C2=A0<a href=3D"https://www.go=
+ogle.com/maps/dir//Sports+Commons,+Silvernail+Rd,+Waukesha,+WI+53188/@43.16=
+46446,-88.3595744,11z/data=3D!4m9!4m8!1m0!1m5!1m1!1s0x8805b1b4eb1ec9b3:0xb3=
+cf9de13af5f6b2!2m2!1d-88.3467012!2d43.0479572!3e0?entry=3Dttu" target=3D"_b=
+lank">Delafield Sports Common</a></font></b></div><div><b><font color=3D"#f=
+f0000">Directions to our field click=C2=A0<a href=3D"https://www.google.com=
+/maps/dir//Sports+Commons,+Silvernail+Rd,+Waukesha,+WI+53188/@43.1646446,-8=
+8.3595744,11z/data=3D!4m9!4m8!1m0!1m5!1m1!1s0x8805b1b4eb1ec9b3:0xb3cf9de13a=
+f5f6b2!2m2!1d-88.3467012!2d43.0479572!3e0?entry=3Dttu" target=3D"_blank">HE=
+RE</a></font></b></div></div><br><div><br></div></div></div></div></div></d=
+iv></div></div></div></div></div></div>
+
+--000000000000e05cc2063ac740ed--

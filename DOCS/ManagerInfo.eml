@@ -1,0 +1,1276 @@
+Delivered-To: sferg989@gmail.com
+Received: by 2002:a05:651c:1b12:b0:32c:f8ba:9bb3 with SMTP id ed18csp1341197ljb;
+        Fri, 25 Jul 2025 13:10:34 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXcfhzF6Q+8vFmcEAoyyQbyQff6N+41MgbilzJ3E6HQENywmHrgexpLc3Sf5+GPnBOomeVhG19n/w==@gmail.com
+X-Received: by 2002:a05:6a20:3d1a:b0:231:d813:4924 with SMTP id adf61e73a8af0-23d5b705b47mr10264253637.12.1753474234177;
+        Fri, 25 Jul 2025 13:10:34 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1753474234; cv=none;
+        d=google.com; s=arc-20240605;
+        b=XhiFEXEEKrBcshqclnLhgOa8UJLmVnj+HaHrvhzgz89hGJkGVXZoKCOLhsEdINxOJu
+         BNUJgcsZA1OZLDe5TeC0p+DxHTA1F29OpYl1iBrST56xvPQGlFY0Z3jKFAVK8Xx7NRYg
+         /vMMIEsCkaPuTSGG5k4JTQi8xxivZ+p2A6HC0HLhqBBDXNn+1h/VhgW5/63XyGyxSVbn
+         U17XISsO7vsf9gW+csgRUrQGmjEGOXnqOspWev7XitU5FhqovcjxQzpIlQSUflci2l4b
+         GAASiJ9JV8pCR4dotgjpQGp82ND6rVLf5I00js/QL9kfKCv7n8gE81By8jQSN/6t0vOB
+         FwAg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=+E0HfBG4vTSiyJODVCSw1M2fNmxkxpMsFB40sTXvBG8=;
+        fh=GCr9bJafMVq0YJbz/a5WJX1IBemxIJUj1xZBAA6l6cU=;
+        b=KAHaSmYqL4z/Q4cAkeY+veL4Fqi5g42F9SS1INKKYvzYB6QB4dSbjcLgaxXENP9qr+
+         K3YVF65OAOUuIhLcGYxp/18fP26sOUPasqsYV80/5rgAKia+evossI4mnVOoJdpqES6V
+         hDJYNjGv3FbhEKVLZ9Sl98K/51gw03R2INWj0+1hTI1ERyPF79XdlV4XL83DlPNAM9zo
+         6Cs4WoBnkPMXJtXB66tw8eser0S1coIfLhwpDQHk/kpfyUL0Z60gWjTFLPknKChot/gd
+         hR61JcYTBB4wgigUO4fGHkIkC5gZnZhse4A5rb+v3ExbjiY0zXw/JAd1tRPTq14zB8YV
+         T9iw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@fcwisconsinsoccer-com.20230601.gappssmtp.com header.s=20230601 header.b=RFPTxait;
+       spf=pass (google.com: domain of leanne.talbert@fcwisconsinsoccer.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=leanne.talbert@fcwisconsinsoccer.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=fcwisconsinsoccer.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <leanne.talbert@fcwisconsinsoccer.com>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id 41be03b00d2f7-b3f7f653275sor378389a12.3.2025.07.25.13.10.33
+        for <sferg989@gmail.com>
+        (Google Transport Security);
+        Fri, 25 Jul 2025 13:10:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of leanne.talbert@fcwisconsinsoccer.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@fcwisconsinsoccer-com.20230601.gappssmtp.com header.s=20230601 header.b=RFPTxait;
+       spf=pass (google.com: domain of leanne.talbert@fcwisconsinsoccer.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=leanne.talbert@fcwisconsinsoccer.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=fcwisconsinsoccer.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=fcwisconsinsoccer-com.20230601.gappssmtp.com; s=20230601; t=1753474233; x=1754079033; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=+E0HfBG4vTSiyJODVCSw1M2fNmxkxpMsFB40sTXvBG8=;
+        b=RFPTxaitl5rh9DX/1XrTiiL4XJUCVBOb4HRm40V6rVN3rixpsiswSos6tImFceQli4
+         1pDGPYZrJTinHK78TrhSNNCwMv3SHNthRkf2ywyowRPFZKwx2s8sIi9rzNM1rGUWRMxv
+         N9wgt2jkAsPHH4nlBb5FFTlKM1gKYD5PpYxQSW3TGqSbVKilAhqPM/9SOuNwJlaH4jEb
+         XBtE1Uv+dVN0F9HtFvLVIEBBxiV5+QgJNfXVSi2mbZjSE8i/84Bmia9+45OvFqIMej1F
+         G7KdJE5qmafcMgmKUS7E3/WRCVAy0Qn9vc6uuU+Ssk0n9Pw6vCgOV0HCPK2xAds5NEKi
+         eR4w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1753474233; x=1754079033;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=+E0HfBG4vTSiyJODVCSw1M2fNmxkxpMsFB40sTXvBG8=;
+        b=xHmHESjDR69SrgkxhUr4Kr+zH4d9iMW8QzHsQZznWsCyj/h6CHpAp6DF++XkKHSZHs
+         +ukwtjxqx0cldEya0d7NNoCaKpPbz4caUBYY88vW5YilQgOUitX/EJczUWnj3ym+0s/t
+         tjODf4VcethNl3oRaIrlDkCl6YojWcjOO+prx7JDvnPcTs8/Fh4HgwndSvqxIviCerea
+         9CvynOrxuIVUrGFsd0hReZ3KXNwLMo/7rR8HNtHrkMzaH3f0KKcTRWZIIX5Y8xBM+cs2
+         0NPHDx6vEQt0dMD4A89XO9qeb8VrSV8fmiOTJtsq3zyz+vTquJ5EyHYj007dZm27AxnW
+         HcCw==
+X-Forwarded-Encrypted: i=1; AJvYcCXmRpC+IGQDhqvcV5vkxn3Hn5LEjyOvHjtu82SJ9FaIC37jrVc5e0+7ZjROpiWBXlXXgJXwPNtdcA==@gmail.com
+X-Gm-Message-State: AOJu0YzRUaVRPCYQT6BG55CmXiLhGp2JgSbCssLKeCKEdy7mvu/sXtWg
+	n1BvwuC9trz+scEt7i3BesAdntfU5b+w1Weg1Vgl1tr0PQPRHQvwY1WRI5ah3muDsu99z7I0WY3
+	5pnSxaoP5klvlfinNd4hlc4+7CEFSaIKf90F/ygnKIA==
+X-Gm-Gg: ASbGnctLpRi/uaT4mtg45UH2K28qG642hHvzui2RDZpaTYNZVrME67DQgcj34TQsbbe
+	+0y2kAOHWl67hLULxQydYeKXBRJ9Yb9Mx58SPhf6FcgULWfY3YSiz0gWx3mg00GJ2ojopjCgwkl
+	7SfAizRgLbl1qw6NAO1T+qtgCzneGKqWea5KwlcYLJUE61rzLcIRRLDnsAnK9AcJQNvzFvTD2Dg
+	YdQ0UpHr5/b4oSlM8KWA/h+A0tpx4E2Lst9z4AYGg==
+X-Google-Smtp-Source: AGHT+IHFJDfXct+YvwQgNqutLoJeSpRzhAbIarGuy0YmHDAXMq5WS8MBznmTnJaWMNAHQZq4QOq4v0HDq32s2ymiKM0=
+X-Received: by 2002:a17:90b:1802:b0:2fa:562c:c1cf with SMTP id
+ 98e67ed59e1d1-31e661fa5c9mr10279853a91.1.1753474232952; Fri, 25 Jul 2025
+ 13:10:32 -0700 (PDT)
+MIME-Version: 1.0
+From: "FCW Boys Adm. Leanne Talbert" <leanne.talbert@fcwisconsinsoccer.com>
+Date: Fri, 25 Jul 2025 15:09:57 -0500
+X-Gm-Features: Ac12FXwJitOUf-xrwHesGrNbWl6s2Vqu-fqDUiKq-u1-_CdLwYeBqWPrsUlcOZY
+Message-ID: <CAFNS6dhZHF_rNp7qo+EehZq4dQy3fTCQdp3cwUsc9_CTOdUb7g@mail.gmail.com>
+Subject: Thank you for volunteering to manage your player's team!!!
+To: undisclosed-recipients:;
+Content-Type: multipart/alternative; boundary="000000000000c73c75063ac6881e"
+Bcc: sferg989@gmail.com
+
+--000000000000c73c75063ac6881e
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+*Thank you for volunteering to manage your player's team!!!*
+
+
+*No sense of urgency here for now.*
+
+*You can gradually get started.*
+
+*Please send out an email introducing yourself to the team prior to, let's
+say 8/05.*
+
+*I will be on vacation from 7/27 to 8/1. I will answer emails, but there
+will be a delay.*
+
+*Training starts the week of 8/11.*
+
+
+*Things to know:*
+
+** league information - games, teams etc will not be confirmed until after
+8/20!  If you see something, don't believe it! It might not be right.*
+
+** Most teams do not need player passes anymore.  *
+
+
+   - *ECNL you are digital, *
+   - *ECNL RL you are digital, *
+   - *Pre-ECNL you are digital*
+   - *NL P2 you will need player passes, *
+   - *11/12's (except 12UB Pre-ECNL) you do not need passes.*
+   - *RCP's you do not need player passes.*
+
+** Referee fees - Information will come in a separate email in mid-August.
+Games do not start until 9/5 at the earliest.*
+
+** contact information for managers, click here
+<https://docs.google.com/spreadsheets/d/1IO0IiO_rQG4EYXXV1PdpozVHoMNlpf-9zg=
+50r__OxR4/edit?usp=3Dsharing>
+(other managers are great resources too, especially when you are all at the
+same locations)*
+
+
+*There is a lot to take in, but remember to enjoy your summer too!*
+
+
+*Here it begins!!*
+
+
+
+*CONTACT LIST:*
+
+=C2=B7         Spreadsheets are sent to you by age group. PLEASE click "Sha=
+re"
+to send me an email to add you.  ONLY your group you manage.
+
+=C2=B7         We club pass most every game, so you will
+need contact information for other teams in your age group.
+
+=C2=B7         Spreadsheet information is* =E2=80=98confidential=E2=80=9D,*=
+ so if you share
+any information from the spreadsheet, make sure you get the parents' permis=
+sion
+first.
+
+=C2=B7         You, as manager, might receive additional emails from famili=
+es or
+better working emails from families to communicate. Please add/correct on t=
+he
+spreadsheet and pass these along to me, too, please.
+
+=C2=B7         Goalkeepers are highlighted in Yellow on the spread.  You wi=
+ll
+need to remind them of their training schedules, also.
+
+          Managers of other teams in your age group* in Green.*
+
+     *     Players in blue are new to the club and might need some extra
+information/attention/help.*
+
+
+Team contact info for 2015/2016 11's click HERE
+<https://docs.google.com/spreadsheets/d/182albv3UKCD7R2svnhyOsFm8Cr3yvGyk9a=
+uOGqwvrdk/edit?gid=3D1275939664#gid=3D1275939664>
+
+
+Team contact info for 2014 12UB's click HERE
+<https://docs.google.com/spreadsheets/d/1cEJW4XlR5neh4stVyzPVd2931Y8GXKVxLU=
+k-GOWlKYU/edit?gid=3D2144667878#gid=3D2144667878>
+
+Team contact info for 2013 13UB's click HERE
+<https://docs.google.com/spreadsheets/d/1UkeocjTQMevAx8kHkQ7IoPVZDcoP_MlDTM=
+MQISNEqAk/edit?gid=3D1803319062#gid=3D1803319062>
+
+
+Team contact info for 2012 14UB's click HERE
+<https://docs.google.com/spreadsheets/d/1QGT45PlIe9qt-IyQMoKGh0BV_6LwB4I3ql=
+NYqIb10zY/edit?gid=3D0#gid=3D0>
+
+Team contact info for 2011 Fall 15UB's click HERE
+<https://docs.google.com/spreadsheets/d/1EcRpjRQlqY0TZG18w_mORcGqHV7UyUZNet=
+umNE6Y210/edit?gid=3D1647727045#gid=3D1647727045>
+
+
+
+You will be able to sign into your "appropriate spread," and you can update
+contact information for both of us.
+
+
+
+*EMAILS/COMMUNICATION:*
+
+=C2=B7         You can send out emails whatever way you would like: Outlook=
+,
+just plain email, whatever works for you, but Sprocket is preferred.
+
+                 * We *do not* want to use TEAMSNAP anymore and move to S
+procket.  Sprocket's app is Sprocket Sports. To use sprocket INFORMATION
+HERE <https://fcwisconsin.sprocketsports.com/club/coach-tm-help-center>.
+This FALL, we will ease into it.
+
+=C2=B7         Typically, most have found the best time to get parents'
+attention is on Sunday, Sunday evening, or early Monday morning before work=
+.
+
+=C2=B7         We ask that you pick one regular time to send a weekly email=
+-
+families will become acquainted with where to look and get
+the information on a regular basis.
+
+=C2=B7         You will have additional emails, but keep this =E2=80=9Cregu=
+lar=E2=80=9D email
+going as a main source of information for your families.
+
+=C2=B7         Your first email should have ALL the families respond to mak=
+e
+sure at least one email per family is being received and not going to spam
+or other.
+
+=C2=B7         Please use =E2=80=9CTENTATIVE=E2=80=9D in your emails on sch=
+edule; ALL schedules
+are subject to changes/cancellations.
+
+=C2=B7         We want to make sure we have our parents in the mindset that
+things can change and always be prepared.
+
+
+
+*In your weekly emails, include:*
+
+  =C3=98   Week=E2=80=99s training- day, time, and field when you can.
+
+  =C3=98   Weekend games, day/time/field address/field map, and color of un=
+iform
+to wear. Unless directed by the coach, this is your call, but we go dark
+for home, light for away games.
+
+  =C3=98   Next Week ahead =E2=80=93 list training, and next weekend=E2=80=
+=99s games.
+
+  =C3=98   Remember to include Goalkeeper training with your training days/=
+times
+
+
+  =C3=98   *Remind players to bring to training:*
+
+=C2=B7         Proper size and properly *pumped* ball (#4 for U11/12, #5 fo=
+r U13
+and up)
+
+=C2=B7         Black training shirt(no # on back), black short, black sock.=
+ Or
+long-sleeve jersey.
+
+=C2=B7         Dress in layers for colder-weather training
+
+=C2=B7         Water for replenishments
+
+=C2=B7         Soccer bag to manage items.
+
+
+** TRAINING SCHEDULE IS BELOW FOR YOUR TEAMS will start the week of 8/11.
+
+
+CLICK HERE
+<https://docs.google.com/spreadsheets/d/1qk3jaFgBlSzbXn737A_-VL7Wn3wk8kuVpk=
+BxxvSorsE/edit#gid=3D2026964023>for
+the daily club schedule.
+
+CLICK HERE
+<https://docs.google.com/spreadsheets/d/1qk3jaFgBlSzbXn737A_-VL7Wn3wk8kuVpk=
+BxxvSorsE/edit?gid=3D249758462#gid=3D249758462>to
+view training days and tournaments
+
+
+
+*Remind players to take home from training:*
+
+=C2=B7         Everything from above, and pick up all visible items and tra=
+sh in
+cool receptacles built by our own player Alex Nelson.
+
+
+
+*For GAMES, remind players to bring: (this might be adjusted soon)*
+
+
+
+(change from last year)
+
+HOME GAME set for "most cases" - Red Jersey, Grey short, Red sock
+
+AWAY GAME set for "most cases" - Black Jersey, Red short, Black sock.
+
+Manager's have the power to make color changes when needed.
+
+
+=C2=B7         *ALL sets of game jerseys/shorts/socks* should *ALWAYS* be
+brought to the game. ALWAYS.
+
+=C2=B7         Water for replenishment
+
+=C2=B7         Proper size and properly pumped soccer ball.
+
+=C2=B7         Layers for warmth in cooler weather.
+
+=C2=B7         Soccer bag for managing gear.
+
+=C2=B7         ALWAYS check the field and bag to make sure all items in the
+soccer bag are yours and the fields are clean of any debris.
+
+
+
+  =C3=98   Put Ben, Billy, me, and lead coach on as part of the team so we =
+are
+on every email. This helps make sure we are all on the same page!!!!!!
+
+
+Ben - ben.shepherd@fcwisconsinsoccer.com
+
+Billy- billy.solberg@fcwisconsinsoccer.com
+
+Leanne - information@fcwisconsinsoccer.com
+
+
+11UB Pre-ECNL/12UB Pre-ECNL also add:  Sean Reti -
+sean.reti@fcwisconsinsoccer.com
+
+11UB Pre-ECNL Black / 12UB Pre-ECNL Grey:  Andrew Hicks
+andrew.hicks@fcwisconsinsoccer.com
+
+
+11UB Pre-ECNL Grey / 12UB Pre-ECNL Grey: Oscar Hernandez
+ozj.hernandez@gmail.com
+
+
+13-19's RL's : Neil Tolson-  neil.tolson@fcwisconsinsoccer.com
+
+13-19's RCP : John Fauser - john.fauser@fcwisconsinsoccer.com
+
+
+
+We can make sure the coaches schedule and team schedule are the same.
+
+We can see any changes and adjustments we need to make.
+
+We need to be double checking each other for the player and families
+benefit.
+
+  =C3=98   Always put in =E2=80=93 check social media, email and rolling sc=
+hedule for
+any changes or cancellations before leaving for event/training.
+
+
+
+Facebook <https://www.facebook.com/FC-Wisconsin-Nationals-1431188530472940>
+
+twitter <https://twitter.com/FCWisc>
+
+Rolling schedule
+<https://docs.google.com/spreadsheets/d/1qk3jaFgBlSzbXn737A_-VL7Wn3wk8kuVpk=
+BxxvSorsE/edit#gid=3D2026964023>
+
+Club website has all social media posted: www.fcwisconsin.com  (new site,
+might take a while to load the first time)
+
+
+
+
+
+*THINGS TO KNOW:*
+
+
+
+
+I will get you as many waivers for games/tournaments from parents when
+needed.
+
+Uniforms are distributed directly to the parents by Stefan=E2=80=99s this y=
+ear.
+
+You will need to collect referee fees and team expenses from parents. Info
+below
+
+
+
+
+
+*GAMES/TOURNAMENTS:*
+
+
+
+Ben, Neil, and John will send game day rosters to us for each game to
+ensure players attend.
+
+Managers must work together to get information out to the list of players
+on the roster.
+
+IN some cases, Ben and Neil have a formatted email itinerary to go out.
+
+Ben/Neil, Sean, and I  will need to know if a player can not make it to a
+game asap. (copy me please)
+
+Managers will need to work together to manage player passes from team to
+team when needed, although most teams do not use player passes anymore.
+
+State leagues and ECNL leagues are digital.
+
+
+State league- you need USYS game card (from me) and ref money - 11's, 12
+Black, 12 Grey, 13UB RL/14UB for NL P2 league, Fall 15UB Black and Grey
+
+ECNL and ECNL RL - Ref money  (game reports and player cards are digital
+now)  12UB Pre-ECNL, 13 ECNL, 14 ECNL, 13 RL , 14 RL
+
+NL P2 is old school - you will need USYS passes, game day roster (from me)
+and ref money.  13 RL , 14 RL
+
+
+*TOURNAMENTS-*
+
+
+*TOURNAMENTS *are HERE
+<https://docs.google.com/spreadsheets/d/1qk3jaFgBlSzbXn737A_-VL7Wn3wk8kuVpk=
+BxxvSorsE/edit?gid=3D716576660#gid=3D716576660>
+to
+the left of the training schedule.
+
+  I will apply to tournaments.
+
+  When schedules come out, *please wait* before entering in Sprocket or
+sending to parents (the first couple of days, schedules change a lot)
+
+   After the FINAL schedule, then send and enter in Sprocket.
+
+ Checkin- I will get with you and let you know how each tournament is
+handling their check-in and what I can help with.
+
+
+
+
+*MANAGER CHECKS:*
+
+
+
+
+
+Club schedule
+<https://docs.google.com/spreadsheets/d/1qk3jaFgBlSzbXn737A_-VL7Wn3wk8kuVpk=
+BxxvSorsE/edit#gid=3D2026964023>
+
+Google Doc.
+
+
+
+The training schedule:
+
+
+   - Schedule is our (coaches/office/managers/families) central location of
+   team schedules. This is our "got to schedule"
+   - If you notice something wrong or off, please *let me know
+   asap.  information@fcwisocnsinsoccer.com
+   <information@fcwisocnsinsoccer.com>*
+   - You can download the schedule and sort.
+   - Green line starts a new week (Monday)
+   - If you put cursor over field name it will bring up address
+   - If you click on the location name it will come up with direction to
+   field.
+   - Sometimes, when available, if you click on field #, it will come up
+   with a field map.
+
+*Sprocket-*
+You are all "managers" of your team on sprocket right now.
+I have loaded in all teams training and tournaments.
+You can communicate off the app or you can use the software on your
+computer/tablet.
+You can add  to your calendar (uniform will need to be put in for games)
+You can add/delete/cancel when needed.
+You should be able to add club pass players to your team as guest for
+communication on app but if not please email to add.
+
+** I need scores sent to me information@fcwisconsinsoccer.com.   I will NOT
+use sprocket scores because this score can be altered by others.
+
+Referee fees and collections I will email in Mid August.  We will not have
+any league games before 9/5
+
+
+
+
+This is enough to digest for now.
+
+
+
+Please let me know if you have any questions.
+
+
+
+Thank you for all your help!
+
+--=20
+----
+Leanne Talbert
+FC Wisconsin
+Boys Admin.
+
+
+*#FCWPLAYINGFORWARD*
+
+*#FCWSUPERCIRRULIUM*
+
+*#FCWTALENTEDCOACHES*
+
+*#FCWPASSIONATEPLAYERS*
+
+*#FCWYOUAREFAMILY*
+
+
+
+*FCW Field (Germantown) information:*
+http://fcwisconsin.com/field-facility-location
+*Directions to our fields click* HERE
+<https://www.google.com/maps/dir//FC+Wisconsin+Soccer,+W+Fond+Du+Lac+Ave,+G=
+ermantown,+WI+53022/@43.1995956,-88.0828281,15z/data=3D!4m9!4m8!1m0!1m5!1m1=
+!1s0x8804fc2cfe6d5c05:0x6dc0f41504f03e87!2m2!1d-88.0828281!2d43.1995956!3e0=
+>
+*******
+*> FCW NORTH Field-(Ashwaubenon) Capital Credit Union Park Stadium
+<https://www.greenbay.com/directory/capital-credit-union-park/>*
+*******
+*> FCW WEST Field-(Delafield) Delafield Sports Common
+<https://www.google.com/maps/dir//Sports+Commons,+Silvernail+Rd,+Waukesha,+=
+WI+53188/@43.1646446,-88.3595744,11z/data=3D!4m9!4m8!1m0!1m5!1m1!1s0x8805b1=
+b4eb1ec9b3:0xb3cf9de13af5f6b2!2m2!1d-88.3467012!2d43.0479572!3e0?entry=3Dtt=
+u>*
+*Directions to our field click HERE
+<https://www.google.com/maps/dir//Sports+Commons,+Silvernail+Rd,+Waukesha,+=
+WI+53188/@43.1646446,-88.3595744,11z/data=3D!4m9!4m8!1m0!1m5!1m1!1s0x8805b1=
+b4eb1ec9b3:0xb3cf9de13af5f6b2!2m2!1d-88.3467012!2d43.0479572!3e0?entry=3Dtt=
+u>*
+
+--000000000000c73c75063ac6881e
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div><p class=3D"MsoNorm=
+al" style=3D"margin:0in 0in 8pt;line-height:15.6933px"><b><span style=3D"co=
+lor:red"><font face=3D"tahoma, sans-serif">Thank you for volunteering to=C2=
+=A0manage=C2=A0your player&#39;s team!!!</font></span></b></p><p class=3D"M=
+soNormal" style=3D"margin:0in 0in 8pt;line-height:15.6933px"><b><span style=
+=3D"color:red"><font face=3D"tahoma, sans-serif"><br></font></span></b></p>=
+<p class=3D"MsoNormal" style=3D"margin:0in 0in 8pt;line-height:15.6933px"><=
+b><font color=3D"#0000ff" face=3D"tahoma, sans-serif">No sense of urgency h=
+ere for now.</font></b></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 8=
+pt;line-height:15.6933px"><b><font color=3D"#0000ff" face=3D"tahoma, sans-s=
+erif">You can gradually get started.</font></b></p><p class=3D"MsoNormal" s=
+tyle=3D"margin:0in 0in 8pt;line-height:15.6933px"><b><font color=3D"#0000ff=
+" face=3D"tahoma, sans-serif">Please send out an email introducing yourself=
+ to the team prior=C2=A0to<span class=3D"gmail_default" style=3D"font-famil=
+y:tahoma,sans-serif">,</span> let&#39;s say 8/05.</font></b></p><p class=3D=
+"MsoNormal" style=3D"margin:0in 0in 8pt;line-height:15.6933px"><span class=
+=3D"gmail_default" style=3D"font-family:tahoma,sans-serif"><b style=3D"back=
+ground-color:rgb(255,255,0)">I will be on vacation from 7/27 to 8/1. I will=
+ answer emails, but there will be a delay.</b></span><br></p><p class=3D"Ms=
+oNormal" style=3D"margin:0in 0in 8pt;line-height:15.6933px"><b><font color=
+=3D"#0000ff" face=3D"tahoma, sans-serif">Training starts the week of 8/1<sp=
+an class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">1</span>=
+.</font></b></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 8pt;line-hei=
+ght:15.6933px"><b><font color=3D"#0000ff" face=3D"tahoma, sans-serif"><br><=
+/font></b></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 8pt;line-heigh=
+t:15.6933px"><font color=3D"#0000ff" face=3D"tahoma, sans-serif"><b><u>Thin=
+gs to know:</u></b></font></p><p class=3D"MsoNormal" style=3D"margin:0in 0i=
+n 8pt;line-height:15.6933px"><b><font color=3D"#0000ff" face=3D"tahoma, san=
+s-serif">* league information - games, teams etc will not be confirmed unti=
+l after 8/20!=C2=A0 </font><font face=3D"tahoma, sans-serif" color=3D"#ff00=
+00">If you see something, don&#39;t believe it! It might not be right.</fon=
+t></b></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 8pt;line-height:15=
+.6933px"><b><font color=3D"#0000ff" face=3D"tahoma, sans-serif">* <span cla=
+ss=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">Most teams do =
+not need player=C2=A0passes anymore</span>.=C2=A0<span class=3D"gmail_defau=
+lt" style=3D"font-family:tahoma,sans-serif">=C2=A0</span></font></b></p><p =
+class=3D"MsoNormal" style=3D"margin:0in 0in 8pt;line-height:15.6933px"></p>=
+<ul><li><b><font face=3D"tahoma, sans-serif" color=3D"#000000"><span class=
+=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">ECNL you are dig=
+ital,=C2=A0</span></font></b></li><li><b><font face=3D"tahoma, sans-serif" =
+color=3D"#000000"><span class=3D"gmail_default" style=3D"font-family:tahoma=
+,sans-serif">ECNL RL you are digital,=C2=A0</span></font></b></li><li><b><f=
+ont face=3D"tahoma, sans-serif" color=3D"#000000"><span class=3D"gmail_defa=
+ult" style=3D"font-family:tahoma,sans-serif">Pre-ECNL you are digital</span=
+></font></b></li><li><b><font face=3D"tahoma, sans-serif" color=3D"#000000"=
+><span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">NL P=
+2 you will need player passes,=C2=A0</span></font></b></li><li><b><font fac=
+e=3D"tahoma, sans-serif" color=3D"#000000"><span class=3D"gmail_default" st=
+yle=3D"font-family:tahoma,sans-serif">11/12&#39;s (except 12UB Pre-ECNL) yo=
+u do not need passes.</span></font></b></li><li><b><font face=3D"tahoma, sa=
+ns-serif" color=3D"#000000"><span class=3D"gmail_default" style=3D"font-fam=
+ily:tahoma,sans-serif">RCP&#39;s you do not need player passes.</span></fon=
+t></b></li></ul><p></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 8pt;l=
+ine-height:15.6933px"><b><font color=3D"#0000ff" face=3D"tahoma, sans-serif=
+">* Referee fees - <span class=3D"gmail_default" style=3D"font-family:tahom=
+a,sans-serif"></span>I<span class=3D"gmail_default" style=3D"font-family:ta=
+homa,sans-serif">nformation will come in a separate email in mid-August.=C2=
+=A0 Games do not start until 9/5 at the earliest.</span></font></b></p><p c=
+lass=3D"MsoNormal" style=3D"margin:0in 0in 8pt;line-height:15.6933px"><b><f=
+ont color=3D"#0000ff" face=3D"tahoma, sans-serif"><span class=3D"gmail_defa=
+ult" style=3D"font-family:tahoma,sans-serif">* contact information for mana=
+gers,=C2=A0<a href=3D"https://docs.google.com/spreadsheets/d/1IO0IiO_rQG4EY=
+XXV1PdpozVHoMNlpf-9zg50r__OxR4/edit?usp=3Dsharing" target=3D"_blank">click =
+here</a>=C2=A0 (other managers are great resources too, especially when you=
+ are all at the same locations)</span></font></b></p><p class=3D"MsoNormal"=
+ style=3D"margin:0in 0in 8pt;line-height:15.6933px"><b><font color=3D"#0000=
+ff" face=3D"tahoma, sans-serif"><br></font></b></p><p class=3D"MsoNormal" s=
+tyle=3D"margin:0in 0in 8pt;line-height:15.6933px"><b><font color=3D"#0000ff=
+" face=3D"tahoma, sans-serif" style=3D"background-color:rgb(0,255,255)">The=
+re is a lot to take in<span class=3D"gmail_default" style=3D"font-family:ta=
+homa,sans-serif">,</span> but remember to enjoy your summer too!</font></b>=
+</p><p class=3D"MsoNormal" style=3D"margin:0in 0in 8pt;line-height:15.6933p=
+x"><font face=3D"tahoma, sans-serif"><br></font></p><p class=3D"MsoNormal" =
+style=3D"margin:0in 0in 8pt;line-height:15.6933px"><b><span style=3D"color:=
+red"><font face=3D"tahoma, sans-serif">Here it begins!!</font></span></b></=
+p><p class=3D"MsoNormal" style=3D"margin:0in 0in 8pt;line-height:15.6933px"=
+><b><span style=3D"color:red"><font face=3D"tahoma, sans-serif"><br></font>=
+</span></b></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 8pt;line-heig=
+ht:15.6933px"><b><span style=3D"color:red"><font face=3D"tahoma, sans-serif=
+"><br></font></span></b></p><p class=3D"MsoNormal" style=3D"margin:0in 0in =
+8pt;line-height:15.6933px"><b><span style=3D"color:red"><font face=3D"tahom=
+a, sans-serif">CONTACT=C2=A0LIST:</font></span></b></p><p style=3D"margin:0=
+in 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-ser=
+if">=C2=B7<span style=3D"font-variant-numeric:normal;font-variant-east-asia=
+n:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span>Spreadsheets are sent to you by age gr=
+oup. PLEASE click &quot;Share&quot; to send me an email to add you.=C2=A0 O=
+NLY your group you manage.</font></p><p style=3D"margin:0in 0in 0.0001pt 0.=
+5in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=B7<span st=
+yle=3D"font-variant-numeric:normal;font-variant-east-asian:normal;font-stre=
+tch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0</span>We club pass most every game<span class=3D"gmail_default=
+" style=3D"font-family:tahoma,sans-serif">,</span> so you will need=C2=A0co=
+ntact=C2=A0information=C2=A0for other teams in your age group.</font></p><p=
+ style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=
+=3D"tahoma, sans-serif">=C2=B7<span style=3D"font-variant-numeric:normal;fo=
+nt-variant-east-asian:normal;font-stretch:normal;line-height:normal">=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span>Spreadsheet=C2=A0inf=
+ormation=C2=A0is<b>=C2=A0=E2=80=98confidential=E2=80=9D,</b>=C2=A0so if you=
+ share any=C2=A0information<span class=3D"gmail_default" style=3D"font-fami=
+ly:tahoma,sans-serif"> from the spreadsheet</span><span class=3D"gmail_defa=
+ult" style=3D"font-family:tahoma,sans-serif">,</span>=C2=A0make sure you ge=
+t the <span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif"=
+></span><span class=3D"gmail_default" style=3D"font-family:tahoma,sans-seri=
+f">parents&#39;</span>=C2=A0permission first.</font></p><p style=3D"margin:=
+0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-se=
+rif">=C2=B7<span style=3D"font-variant-numeric:normal;font-variant-east-asi=
+an:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span>You<span class=3D"gmail_default" style=
+=3D"font-family:tahoma,sans-serif">,</span> as=C2=A0<span><span>manager</sp=
+an></span><span class=3D"gmail_default" style=3D"font-family:tahoma,sans-se=
+rif">,</span>=C2=A0might receive additional emails from families or better =
+working emails from families to communicate<span class=3D"gmail_default" st=
+yle=3D"font-family:tahoma,sans-serif"></span>.<span class=3D"gmail_default"=
+ style=3D"font-family:tahoma,sans-serif"> Please</span> add/correct on <spa=
+n class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif"></span>t<=
+span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">he spr=
+eadsheet</span> and pass these along to me<span class=3D"gmail_default" sty=
+le=3D"font-family:tahoma,sans-serif">,</span> too<span class=3D"gmail_defau=
+lt" style=3D"font-family:tahoma,sans-serif">,</span> please.</font></p><p s=
+tyle=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"=
+tahoma, sans-serif">=C2=B7<span style=3D"font-variant-numeric:normal;font-v=
+ariant-east-asian:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0<font color=3D"#000000" style=3D"background-colo=
+r:rgb(255,255,0)">=C2=A0=C2=A0=C2=A0</font></span><font color=3D"#000000" s=
+tyle=3D"background-color:rgb(255,255,0)">Goalkeepers are highlighted in Yel=
+low on <span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif=
+">the=C2=A0</span>spread.=C2=A0</font>=C2=A0You will need to remind them of=
+ their training<span class=3D"gmail_default" style=3D"font-family:tahoma,sa=
+ns-serif"> schedules</span><span class=3D"gmail_default" style=3D"font-fami=
+ly:tahoma,sans-serif">,</span> also.</font></p><p style=3D"margin:0in 0in 0=
+.0001pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=C2=A0<span><span>Managers</span></span>=C2=
+=A0of other teams in your age group<b>=C2=A0<span class=3D"gmail_default" s=
+tyle=3D"font-family:tahoma,sans-serif"><span style=3D"background-color:rgb(=
+147,196,125)">in Green</span></span><span style=3D"background-color:rgb(147=
+,196,125)">.</span></b></font></p><p style=3D"margin:0in 0in 0.0001pt 0.5in=
+;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=A0 =C2=A0 =C2=
+=A0<b><font color=3D"#0000ff">=C2=A0=C2=A0 =C2=A0 Players in blue are new t=
+o the club and might need some extra information/attention/help.</font></b>=
+</font></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"=
+><font face=3D"tahoma, sans-serif"><br></font></p><p style=3D"margin:0in 0i=
+n 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">T=
+eam contact info for 201<span class=3D"gmail_default" style=3D"font-family:=
+tahoma,sans-serif">5</span>/201<span class=3D"gmail_default" style=3D"font-=
+family:tahoma,sans-serif">6</span> 11&#39;s=C2=A0<a href=3D"https://docs.go=
+ogle.com/spreadsheets/d/182albv3UKCD7R2svnhyOsFm8Cr3yvGyk9auOGqwvrdk/edit?g=
+id=3D1275939664#gid=3D1275939664" target=3D"_blank">click HERE</a>=C2=A0=C2=
+=A0</font></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933=
+px"><span style=3D"font-family:tahoma,sans-serif">Team contact info for 201=
+<span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">4</sp=
+an> 12UB&#39;s=C2=A0</span><a href=3D"https://docs.google.com/spreadsheets/=
+d/1cEJW4XlR5neh4stVyzPVd2931Y8GXKVxLUk-GOWlKYU/edit?gid=3D2144667878#gid=3D=
+2144667878" target=3D"_blank">click HERE </a></p><p style=3D"margin:0in 0in=
+ 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">Te=
+am contact info for 201<span class=3D"gmail_default" style=3D"font-family:t=
+ahoma,sans-serif">3</span> 13UB&#39;s=C2=A0<a href=3D"https://docs.google.c=
+om/spreadsheets/d/1UkeocjTQMevAx8kHkQ7IoPVZDcoP_MlDTMMQISNEqAk/edit?gid=3D1=
+803319062#gid=3D1803319062" target=3D"_blank">click HERE</a>=C2=A0</font></=
+p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font fa=
+ce=3D"tahoma, sans-serif">Team contact info for 201<span class=3D"gmail_def=
+ault" style=3D"font-family:tahoma,sans-serif">2</span> 14UB&#39;s=C2=A0<a h=
+ref=3D"https://docs.google.com/spreadsheets/d/1QGT45PlIe9qt-IyQMoKGh0BV_6Lw=
+B4I3qlNYqIb10zY/edit?gid=3D0#gid=3D0" target=3D"_blank">click HERE </a></fo=
+nt></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><fo=
+nt face=3D"tahoma, sans-serif">Team contact info for 201<span class=3D"gmai=
+l_default" style=3D"font-family:tahoma,sans-serif">1</span> Fall 15UB&#39;s=
+=C2=A0<a href=3D"https://docs.google.com/spreadsheets/d/1EcRpjRQlqY0TZG18w_=
+mORcGqHV7UyUZNetumNE6Y210/edit?gid=3D1647727045#gid=3D1647727045" target=3D=
+"_blank">click HERE</a>=C2=A0</font></p><p style=3D"margin:0in 0in 0.0001pt=
+ 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-serif"><br></font>=
+</p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font =
+face=3D"tahoma, sans-serif">You will be able to sign into your &quot;approp=
+riate spread<span class=3D"gmail_default" style=3D"font-family:tahoma,sans-=
+serif">,</span>&quot; and you can update contact information for both of us=
+.</font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-he=
+ight:15.6933px"><font face=3D"tahoma, sans-serif">=C2=A0</font></p><p class=
+=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><b><=
+span style=3D"color:red"><font face=3D"tahoma, sans-serif">EMAILS/COMMUNICA=
+TION:</font></span></b></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-h=
+eight:15.6933px"><font face=3D"tahoma, sans-serif">=C2=B7<span style=3D"fon=
+t-variant-numeric:normal;font-variant-east-asian:normal;font-stretch:normal=
+;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+</span>You can send out emails whatever way you would like: <span class=3D"=
+gmail_default" style=3D"font-family:tahoma,sans-serif"></span>O<span class=
+=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">utlook</span>, j=
+ust plain email, whatever works for you<span class=3D"gmail_default" style=
+=3D"font-family:tahoma,sans-serif">, but Sprocket is preferred</span>.=C2=
+=A0</font></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933=
+px"><font face=3D"tahoma, sans-serif">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0* <span class=3D"gmail_default" style=3D"font-fa=
+mily:tahoma,sans-serif"></span>W<span class=3D"gmail_default" style=3D"font=
+-family:tahoma,sans-serif">e</span> <b><u>do not</u></b> want to use TEAMSN=
+AP anymore and move to <span class=3D"gmail_default" style=3D"font-family:t=
+ahoma,sans-serif"></span>S<span class=3D"gmail_default" style=3D"font-famil=
+y:tahoma,sans-serif">procket</span>.=C2=A0 Sprocket&#39;s app is <span clas=
+s=3D"gmail_default" style=3D"font-family:tahoma,sans-serif"></span>S<span c=
+lass=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">procket Spor=
+ts</span>. To <span class=3D"gmail_default" style=3D"font-family:tahoma,san=
+s-serif"></span>u<span class=3D"gmail_default" style=3D"font-family:tahoma,=
+sans-serif">se</span> sprocket=C2=A0<a href=3D"https://fcwisconsin.sprocket=
+sports.com/club/coach-tm-help-center" target=3D"_blank">INFORMATION HERE</a=
+>. This FALL<span class=3D"gmail_default" style=3D"font-family:tahoma,sans-=
+serif">,</span> we will ease into it.</font></p><p style=3D"margin:0in 0in =
+0.0001pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=
+=B7<span style=3D"font-variant-numeric:normal;font-variant-east-asian:norma=
+l;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0</span>Typically, most have found the best time to get=
+ <span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif"></sp=
+an>p<span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">a=
+rents&#39;</span> attention is on Sunday, Sunday evening<span class=3D"gmai=
+l_default" style=3D"font-family:tahoma,sans-serif">,</span> or early Monday=
+ morning before work.</font></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;l=
+ine-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=B7<span style=
+=3D"font-variant-numeric:normal;font-variant-east-asian:normal;font-stretch=
+:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0</span>We ask that you pick one regular time to send a weekly emai=
+l- families will become acquainted with where to look and get the=C2=A0info=
+rmation=C2=A0on a regular <span class=3D"gmail_default" style=3D"font-famil=
+y:tahoma,sans-serif"></span>b<span class=3D"gmail_default" style=3D"font-fa=
+mily:tahoma,sans-serif">asis</span>.</font></p><p style=3D"margin:0in 0in 0=
+.0001pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=
+=B7<span style=3D"font-variant-numeric:normal;font-variant-east-asian:norma=
+l;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0</span>You will have additional emails<span class=3D"g=
+mail_default" style=3D"font-family:tahoma,sans-serif">,</span> but keep thi=
+s =E2=80=9Cregular=E2=80=9D email going as a main source of=C2=A0informatio=
+n=C2=A0for your families.</font></p><p style=3D"margin:0in 0in 0.0001pt 0.5=
+in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=B7<span sty=
+le=3D"font-variant-numeric:normal;font-variant-east-asian:normal;font-stret=
+ch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0</span>Your first email should have ALL the families respond to ma=
+ke sure at least one email per family is being r<span class=3D"gmail_defaul=
+t" style=3D"font-family:tahoma,sans-serif"></span>eceived and not going to =
+spam or other.</font></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-hei=
+ght:15.6933px"><font face=3D"tahoma, sans-serif">=C2=B7<span style=3D"font-=
+variant-numeric:normal;font-variant-east-asian:normal;font-stretch:normal;l=
+ine-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</=
+span>Please use =E2=80=9CTENTATIVE=E2=80=9D in your emails on schedule<span=
+ class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif"></span>; A=
+LL schedules are <span class=3D"gmail_default" style=3D"font-family:tahoma,=
+sans-serif"></span>s<span class=3D"gmail_default" style=3D"font-family:taho=
+ma,sans-serif">ubject</span> to changes/cancellations.</font></p><p style=
+=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"taho=
+ma, sans-serif">=C2=B7<span style=3D"font-variant-numeric:normal;font-varia=
+nt-east-asian:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span>We want to make sure we ha=
+ve our parents in the mindset that things can change and always be prepared=
+.</font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-he=
+ight:15.6933px"><font face=3D"tahoma, sans-serif">=C2=A0</font></p><p class=
+=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><b><=
+font face=3D"tahoma, sans-serif">In your weekly emails<span class=3D"gmail_=
+default" style=3D"font-family:tahoma,sans-serif">,</span> include:</font></=
+b></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><fon=
+t face=3D"tahoma, sans-serif"><span style=3D"font-variant-numeric:normal;fo=
+nt-variant-east-asian:normal;font-stretch:normal;line-height:normal">=C2=A0=
+=C2=A0</span>=C3=98<span style=3D"font-variant-numeric:normal;font-variant-=
+east-asian:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=
+=A0</span>Week=E2=80=99s training- day, time<span class=3D"gmail_default" s=
+tyle=3D"font-family:tahoma,sans-serif">,</span> and field when you can.</fo=
+nt></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><fo=
+nt face=3D"tahoma, sans-serif"><span style=3D"font-variant-numeric:normal;f=
+ont-variant-east-asian:normal;font-stretch:normal;line-height:normal">=C2=
+=A0=C2=A0</span>=C3=98<span style=3D"font-variant-numeric:normal;font-varia=
+nt-east-asian:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=
+=C2=A0</span>Weekend games, day/time/field address/field map<span class=3D"=
+gmail_default" style=3D"font-family:tahoma,sans-serif">,</span> and color o=
+f uniform to wear. Unless directed by the coach<span class=3D"gmail_default=
+" style=3D"font-family:tahoma,sans-serif">,</span> this is your call<span c=
+lass=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">,</span> but=
+ we go dark for home, light for away games.</font></p><p style=3D"margin:0i=
+n 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-seri=
+f"><span style=3D"font-variant-numeric:normal;font-variant-east-asian:norma=
+l;font-stretch:normal;line-height:normal">=C2=A0=C2=A0</span>=C3=98<span st=
+yle=3D"font-variant-numeric:normal;font-variant-east-asian:normal;font-stre=
+tch:normal;line-height:normal">=C2=A0 =C2=A0Next=C2=A0</span>Week ahead =E2=
+=80=93 list training, and next weekend=E2=80=99s games.</font></p><p style=
+=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"taho=
+ma, sans-serif"><span style=3D"font-variant-numeric:normal;font-variant-eas=
+t-asian:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0</span>=
+=C3=98<span style=3D"font-variant-numeric:normal;font-variant-east-asian:no=
+rmal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0</span>Remem=
+ber to include Goalkeeper training with your training days/times</font></p>=
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=
+=3D"tahoma, sans-serif"><br></font></p><p style=3D"margin:0in 0in 0.0001pt =
+0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-serif"><span style=
+=3D"font-variant-numeric:normal;font-variant-east-asian:normal;font-stretch=
+:normal;line-height:normal">=C2=A0=C2=A0</span>=C3=98<span style=3D"font-va=
+riant-numeric:normal;font-variant-east-asian:normal;font-stretch:normal;lin=
+e-height:normal">=C2=A0=C2=A0=C2=A0</span><b>Remind players to bring to tra=
+ining:</b></font></p><p style=3D"margin:0in 0in 0.0001pt 1in;line-height:15=
+.6933px"><font face=3D"tahoma, sans-serif">=C2=B7<span style=3D"font-varian=
+t-numeric:normal;font-variant-east-asian:normal;font-stretch:normal;line-he=
+ight:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span>P=
+roper size and properly=C2=A0<b style=3D"background-color:rgb(255,255,0)">p=
+umped</b>=C2=A0ball (#4 for U11/12, #5 for U13 and up)</font></p><p style=
+=3D"margin:0in 0in 0.0001pt 1in;line-height:15.6933px"><font face=3D"tahoma=
+, sans-serif">=C2=B7<span style=3D"font-variant-numeric:normal;font-variant=
+-east-asian:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span><span style=3D"font-variant-n=
+umeric:normal;font-variant-east-asian:normal;font-stretch:normal;line-heigh=
+t:normal">Black<span class=3D"gmail_default" style=3D"font-family:tahoma,sa=
+ns-serif"> training shirt(no # on back), black short, black sock. Or long-s=
+leeve jersey.</span>=C2=A0</span></font></p><p style=3D"margin:0in 0in 0.00=
+01pt 1in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=B7<sp=
+an style=3D"font-variant-numeric:normal;font-variant-east-asian:normal;font=
+-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0</span>Dress in layers for <span class=3D"gmail_default" sty=
+le=3D"font-family:tahoma,sans-serif"></span>c<span class=3D"gmail_default" =
+style=3D"font-family:tahoma,sans-serif">older-weather</span> training</font=
+></p><p style=3D"margin:0in 0in 0.0001pt 1in;line-height:15.6933px"><font f=
+ace=3D"tahoma, sans-serif">=C2=B7<span style=3D"font-variant-numeric:normal=
+;font-variant-east-asian:normal;font-stretch:normal;line-height:normal">=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span>Water for repleni=
+shments</font></p><p style=3D"margin:0in 0in 0.0001pt 1in;line-height:15.69=
+33px"><font face=3D"tahoma, sans-serif">=C2=B7<span style=3D"font-variant-n=
+umeric:normal;font-variant-east-asian:normal;font-stretch:normal;line-heigh=
+t:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span>Socc=
+er bag to=C2=A0manage=C2=A0items.</font></p><p style=3D"margin:0in 0in 0.00=
+01pt 1in;line-height:15.6933px"><font face=3D"tahoma, sans-serif"><br></fon=
+t></p><p style=3D"margin:0in 0in 0.0001pt 1in;line-height:15.6933px"><font =
+face=3D"tahoma, sans-serif">** TRAINING SCHEDULE IS BELOW FOR YOUR TEAMS wi=
+ll start the week of 8/1<span class=3D"gmail_default" style=3D"font-family:=
+tahoma,sans-serif">1</span>.</font></p><p style=3D"margin:0in 0in 0.0001pt =
+1in;line-height:15.6933px"><font face=3D"tahoma, sans-serif"><br></font></p=
+><p style=3D"margin:0in 0in 0.0001pt 1in;line-height:15.6933px"><font face=
+=3D"tahoma, sans-serif"><a href=3D"https://docs.google.com/spreadsheets/d/1=
+qk3jaFgBlSzbXn737A_-VL7Wn3wk8kuVpkBxxvSorsE/edit#gid=3D2026964023" target=
+=3D"_blank">CLICK HERE=C2=A0</a>for the <span class=3D"gmail_default" style=
+=3D"font-family:tahoma,sans-serif"></span>d<span class=3D"gmail_default" st=
+yle=3D"font-family:tahoma,sans-serif">aily</span> club schedule.</font></p>=
+<p style=3D"margin:0in 0in 0.0001pt 1in;line-height:15.6933px"><font face=
+=3D"tahoma, sans-serif"><a href=3D"https://docs.google.com/spreadsheets/d/1=
+qk3jaFgBlSzbXn737A_-VL7Wn3wk8kuVpkBxxvSorsE/edit?gid=3D249758462#gid=3D2497=
+58462" target=3D"_blank">CLICK HERE </a>to view training days and tournamen=
+ts</font></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933p=
+x"><font face=3D"tahoma, sans-serif">=C2=A0</font></p><p style=3D"margin:0i=
+n 0in 0.0001pt 0.5in;line-height:15.6933px"><b><font face=3D"tahoma, sans-s=
+erif">Remind players to take home from training:</font></b></p><p style=3D"=
+margin:0in 0in 0.0001pt 1in;line-height:15.6933px"><font face=3D"tahoma, sa=
+ns-serif">=C2=B7<span style=3D"font-variant-numeric:normal;font-variant-eas=
+t-asian:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span>Everything from above<span class=
+=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">,</span> and pic=
+k up all visible items and trash in cool receptacles built by our own playe=
+r Alex Nelson.</font></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-hei=
+ght:15.6933px"><font face=3D"tahoma, sans-serif">=C2=A0</font></p><p style=
+=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><b><font face=3D"t=
+ahoma, sans-serif">For GAMES<span class=3D"gmail_default" style=3D"font-fam=
+ily:tahoma,sans-serif">,</span> remind players to bring: (this might be adj=
+usted soon)</font></b></p><p style=3D"margin:0in 0in 0.0001pt 1in;line-heig=
+ht:15.6933px"><font face=3D"tahoma, sans-serif">=C2=A0</font></p><p style=
+=3D"margin:0in 0in 0.0001pt 1in;line-height:15.6933px"><font face=3D"tahoma=
+, sans-serif">(change from last year)</font></p><p style=3D"margin:0in 0in =
+0.0001pt 1in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">HOME =
+GAME set for &quot;most cases&quot; -=C2=A0</font><span style=3D"font-famil=
+y:tahoma,sans-serif"><span class=3D"gmail_default" style=3D"font-family:tah=
+oma,sans-serif"></span>R<span class=3D"gmail_default" style=3D"font-family:=
+tahoma,sans-serif">ed Jersey</span>,=C2=A0<span class=3D"gmail_default" sty=
+le=3D"font-family:tahoma,sans-serif">Grey short, Red sock</span></span></p>=
+<p style=3D"margin:0in 0in 0.0001pt 1in;line-height:15.6933px"><font face=
+=3D"tahoma, sans-serif">AWAY GAME set for &quot;most cases&quot; -=C2=A0</f=
+ont><span style=3D"font-family:tahoma,sans-serif"><span class=3D"gmail_defa=
+ult" style=3D"font-family:tahoma,sans-serif"></span>B<span class=3D"gmail_d=
+efault" style=3D"font-family:tahoma,sans-serif">lack Jersey, Red short, Bla=
+ck sock.</span></span></p><p style=3D"margin:0in 0in 0.0001pt 1in;line-heig=
+ht:15.6933px"><font face=3D"tahoma, sans-serif"><span><span>Manager</span><=
+/span>&#39;s have the power to make color changes when needed.</font></p><p=
+ style=3D"margin:0in 0in 0.0001pt 1in;line-height:15.6933px"><font face=3D"=
+tahoma, sans-serif"><br></font></p><p style=3D"margin:0in 0in 0.0001pt 1in;=
+line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=B7<span style=
+=3D"font-variant-numeric:normal;font-variant-east-asian:normal;font-stretch=
+:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0<span style=3D"ba=
+ckground-color:rgb(255,255,0)">=C2=A0=C2=A0=C2=A0=C2=A0</span></span><span =
+style=3D"background-color:rgb(255,255,0)"><b><u>ALL sets of game jerseys<sp=
+an class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">/shorts/=
+socks</span></u></b>=C2=A0should=C2=A0<b><u>ALWAYS</u></b>=C2=A0be brought =
+to <span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">th=
+e=C2=A0</span>game. ALWAYS.</span></font></p><p style=3D"margin:0in 0in 0.0=
+001pt 1in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=B7<s=
+pan style=3D"font-variant-numeric:normal;font-variant-east-asian:normal;fon=
+t-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0</span>Water for replenishment</font></p><p style=3D"marg=
+in:0in 0in 0.0001pt 1in;line-height:15.6933px"><font face=3D"tahoma, sans-s=
+erif">=C2=B7<span style=3D"font-variant-numeric:normal;font-variant-east-as=
+ian:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span>Proper size and properly pumped soccer=
+ ball.</font></p><p style=3D"margin:0in 0in 0.0001pt 1in;line-height:15.693=
+3px"><font face=3D"tahoma, sans-serif">=C2=B7<span style=3D"font-variant-nu=
+meric:normal;font-variant-east-asian:normal;font-stretch:normal;line-height=
+:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span>Layer=
+s for warmth in cooler weather.</font></p><p style=3D"margin:0in 0in 0.0001=
+pt 1in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=B7<span=
+ style=3D"font-variant-numeric:normal;font-variant-east-asian:normal;font-s=
+tretch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0</span>Soccer bag for=C2=A0managing=C2=A0gear.</font></p><p =
+style=3D"margin:0in 0in 0.0001pt 1in;line-height:15.6933px"><font face=3D"t=
+ahoma, sans-serif">=C2=B7<span style=3D"font-variant-numeric:normal;font-va=
+riant-east-asian:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</span>ALWAYS check the field =
+and bag to make sure all items in the soccer bag are yours and the fields a=
+re clean of any debris.</font></p><p style=3D"margin:0in 0in 0.0001pt 0.5in=
+;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=A0</font></p>=
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=
+=3D"tahoma, sans-serif"><span style=3D"font-variant-numeric:normal;font-var=
+iant-east-asian:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=
+</span>=C3=98<span style=3D"font-variant-numeric:normal;font-variant-east-a=
+sian:normal;font-stretch:normal;line-height:normal">=C2=A0=C2=A0=C2=A0</spa=
+n>Put Ben, Billy, me<span class=3D"gmail_default" style=3D"font-family:taho=
+ma,sans-serif">,</span> and lead coach on as part of the team so we are on =
+every email. This helps make sure we are all on the same page!!!!!!</font><=
+/p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font f=
+ace=3D"tahoma, sans-serif"><br></font></p><p style=3D"margin:0in 0in 0.0001=
+pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">Ben -=C2=
+=A0<a href=3D"mailto:ben.shepherd@fcwisconsinsoccer.com" target=3D"_blank">=
+ben.shepherd@fcwisconsinsoccer.com</a></font></p><p style=3D"margin:0in 0in=
+ 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-serif">Bi=
+lly-=C2=A0<a href=3D"mailto:billy.solberg@fcwisconsinsoccer.com" target=3D"=
+_blank">billy.solberg@fcwisconsinsoccer.com</a></font></p><p style=3D"margi=
+n:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-=
+serif">Leanne -=C2=A0<a href=3D"mailto:information@fcwisconsinsoccer.com" t=
+arget=3D"_blank">information@fcwisconsinsoccer.com</a></font></p><p style=
+=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><br></p><p style=
+=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><span class=3D"gma=
+il_default" style=3D"font-family:tahoma,sans-serif"></span>1<span class=3D"=
+gmail_default" style=3D"font-family:tahoma,sans-serif">1UB Pre-ECNL/12UB Pr=
+e-ECNL</span>=C2=A0also add:=C2=A0 Sean Reti -=C2=A0<a href=3D"mailto:sean.=
+reti@fcwisconsinsoccer.com" target=3D"_blank">sean.reti@fcwisconsinsoccer.c=
+om</a></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px">=
+<span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">11UB =
+Pre-ECNL Black / 12UB Pre-ECNL Grey:=C2=A0 Andrew Hicks <a href=3D"mailto:a=
+ndrew.hicks@fcwisconsinsoccer.com" target=3D"_blank">andrew.hicks@fcwiscons=
+insoccer.com</a></span><br></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;li=
+ne-height:15.6933px"><span class=3D"gmail_default" style=3D"font-family:tah=
+oma,sans-serif"><br></span></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;li=
+ne-height:15.6933px"><span class=3D"gmail_default" style=3D"font-family:tah=
+oma,sans-serif">11UB Pre-ECNL Grey / 12UB Pre-ECNL Grey: Oscar Hernandez=C2=
+=A0<a href=3D"mailto:ozj.hernandez@gmail.com">ozj.hernandez@gmail.com</a></=
+span></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><=
+span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif"><br></=
+span></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px">1=
+3-19&#39;s RL&#39;s : Neil Tolson-=C2=A0=C2=A0<a href=3D"mailto:neil.tolson=
+@fcwisconsinsoccer.com" target=3D"_blank">neil.tolson@fcwisconsinsoccer.com=
+</a></p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px">13=
+-19&#39;s RCP : John Fauser -=C2=A0<a href=3D"mailto:john.fauser@fcwisconsi=
+nsoccer.com" target=3D"_blank">john.fauser@fcwisconsinsoccer.com</a></p><p =
+style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><br></p><p st=
+yle=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"t=
+ahoma, sans-serif"><br></font></p><p style=3D"margin:0in 0in 0.0001pt 0.5in=
+;line-height:15.6933px"><font face=3D"tahoma, sans-serif">We can make sure =
+the coaches schedule and team schedule are the same.</font></p><p style=3D"=
+margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font face=3D"tahoma, =
+sans-serif">We can see any changes and adjustments we need to make.</font><=
+/p><p style=3D"margin:0in 0in 0.0001pt 0.5in;line-height:15.6933px"><font f=
+ace=3D"tahoma, sans-serif">We need to be double checking each other for the=
+ player and families benefit.</font></p><p style=3D"margin:0in 0in 0.0001pt=
+ 0.5in;line-height:15.6933px"><font face=3D"tahoma, sans-serif"><span style=
+=3D"font-variant-numeric:normal;font-variant-east-asian:normal;font-stretch=
+:normal;line-height:normal">=C2=A0=C2=A0</span>=C3=98<span style=3D"font-va=
+riant-numeric:normal;font-variant-east-asian:normal;font-stretch:normal;lin=
+e-height:normal">=C2=A0=C2=A0=C2=A0</span>Always put in =E2=80=93 check soc=
+ial media, email and rolling schedule for any changes or cancellations befo=
+re leaving for event/training.</font></p><p class=3D"MsoNormal" style=3D"ma=
+rgin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sans-ser=
+if">=C2=A0</font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001p=
+t;line-height:15.6933px"><a href=3D"https://www.facebook.com/FC-Wisconsin-N=
+ationals-1431188530472940" style=3D"color:blue" target=3D"_blank"><font fac=
+e=3D"tahoma, sans-serif">Facebook</font></a></p><p class=3D"MsoNormal" styl=
+e=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><a href=3D"https://twit=
+ter.com/FCWisc" style=3D"color:blue" target=3D"_blank"><font face=3D"tahoma=
+, sans-serif">twitter</font></a></p><p class=3D"MsoNormal" style=3D"margin:=
+0in 0in 0.0001pt;line-height:15.6933px"><a href=3D"https://docs.google.com/=
+spreadsheets/d/1qk3jaFgBlSzbXn737A_-VL7Wn3wk8kuVpkBxxvSorsE/edit#gid=3D2026=
+964023" style=3D"color:blue" target=3D"_blank"><font face=3D"tahoma, sans-s=
+erif">Rolling schedule</font></a></p><p class=3D"MsoNormal" style=3D"margin=
+:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=
+Club website has all social media posted:=C2=A0<a href=3D"http://www.fcwisc=
+onsin.com/" style=3D"color:blue" target=3D"_blank">www.fcwisconsin.com</a><=
+span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">=C2=A0=
+ <font color=3D"#ff0000">(new site, might take a while to load the first ti=
+me)</font></span></font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in =
+0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=A0</f=
+ont></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height=
+:15.6933px"><font face=3D"tahoma, sans-serif">=C2=A0</font></p><p class=3D"=
+MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><b><font=
+ face=3D"tahoma, sans-serif">THINGS TO KNOW:</font></b></p><p class=3D"MsoN=
+ormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><font face=
+=3D"tahoma, sans-serif">=C2=A0</font></p><p class=3D"MsoNormal" style=3D"ma=
+rgin:0in 0in 0.0001pt;line-height:15.6933px"><br></p><p class=3D"MsoNormal"=
+ style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"taho=
+ma, sans-serif">I will get you as many waivers for games/tournaments from p=
+arents=C2=A0<span class=3D"gmail_default" style=3D"font-family:tahoma,sans-=
+serif">when needed.</span></font></p><p class=3D"MsoNormal" style=3D"margin=
+:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=
+Uniforms are distributed directly to the parents by Stefan=E2=80=99s this y=
+ear.</font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line=
+-height:15.6933px"><font face=3D"tahoma, sans-serif">You will need to colle=
+ct referee fees and team expenses from parents. Info below</font></p><p cla=
+ss=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><b=
+r></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:1=
+5.6933px"><br></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;l=
+ine-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=A0</font></p><p=
+ class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px=
+"><b><font face=3D"tahoma, sans-serif">GAMES/TOURNAMENTS:</font></b></p><p =
+class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"=
+><font face=3D"tahoma, sans-serif">=C2=A0</font></p><p class=3D"MsoNormal" =
+style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahom=
+a, sans-serif">Ben, Neil<span class=3D"gmail_default" style=3D"font-family:=
+tahoma,sans-serif">,</span> and John<span class=3D"gmail_default" style=3D"=
+font-family:tahoma,sans-serif">=C2=A0</span><span class=3D"gmail_default" s=
+tyle=3D"font-family:tahoma,sans-serif">will=C2=A0</span>send<span class=3D"=
+gmail_default" style=3D"font-family:tahoma,sans-serif"></span>=C2=A0game da=
+y rosters to us for each game<span class=3D"gmail_default" style=3D"font-fa=
+mily:tahoma,sans-serif"> to ensure players attend.</span></font></p><p clas=
+s=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><fo=
+nt face=3D"tahoma, sans-serif"><span><span>Managers</span></span>=C2=A0must=
+ work together to get=C2=A0information=C2=A0out to the list of players on t=
+he roster.</font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001p=
+t;line-height:15.6933px"><font face=3D"tahoma, sans-serif">IN some cases<sp=
+an class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">,</span>=
+ Ben<span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif"> =
+and Neil=C2=A0</span><span class=3D"gmail_default" style=3D"font-family:tah=
+oma,sans-serif"></span>h<span class=3D"gmail_default" style=3D"font-family:=
+tahoma,sans-serif">ave</span> a formatted email <span class=3D"gmail_defaul=
+t" style=3D"font-family:tahoma,sans-serif">itinerary=C2=A0</span>to go out.=
+</font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-hei=
+ght:15.6933px"><font face=3D"tahoma, sans-serif">Ben/Neil, Sean<span class=
+=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">,</span> and I=
+=C2=A0 will need to know if a player can not make it to a game asap. (copy =
+me please)</font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001p=
+t;line-height:15.6933px"><font face=3D"tahoma, sans-serif"><span><span>Mana=
+gers</span></span>=C2=A0will need to work together to=C2=A0manage=C2=A0play=
+er passes from team to team when needed,<span class=3D"gmail_default" style=
+=3D"font-family:tahoma,sans-serif"> although most teams do not use player p=
+asses anymore.</span></font></p><p class=3D"MsoNormal" style=3D"margin:0in =
+0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sans-serif">State=
+ leagues and ECNL leagues are digital.</font></p><p class=3D"MsoNormal" sty=
+le=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, =
+sans-serif"><br></font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0=
+.0001pt;line-height:15.6933px"><font face=3D"tahoma, sans-serif">State leag=
+ue- you need USYS=C2=A0<span class=3D"gmail_default" style=3D"font-family:t=
+ahoma,sans-serif">game card</span> (from me) and ref money -<span class=3D"=
+gmail_default" style=3D"font-family:tahoma,sans-serif"> 11&#39;s, 12 Black,=
+ 12 Grey, 13UB RL/14UB for NL P2 league, Fall 15UB Black and Grey</span></f=
+ont></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height=
+:15.6933px"><font face=3D"tahoma, sans-serif">ECNL and ECNL RL - Ref money=
+=C2=A0 (game reports<span class=3D"gmail_default" style=3D"font-family:taho=
+ma,sans-serif"> and player cards</span> are digital now)=C2=A0 <span class=
+=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">12UB Pre-ECNL,=
+=C2=A0</span>13 ECNL, 14 ECNL, 13 RL , 14 RL=C2=A0</font></p><p class=3D"Ms=
+oNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><font face=
+=3D"tahoma, sans-serif"><span class=3D"gmail_default" style=3D"font-family:=
+tahoma,sans-serif">NL P2</span>=C2=A0is old school - you will need USYS pas=
+ses, game day roster <span class=3D"gmail_default" style=3D"font-family:tah=
+oma,sans-serif"></span><span class=3D"gmail_default" style=3D"font-family:t=
+ahoma,sans-serif"></span>(<span class=3D"gmail_default" style=3D"font-famil=
+y:tahoma,sans-serif">from me)=C2=A0</span> <span class=3D"gmail_default" st=
+yle=3D"font-family:tahoma,sans-serif">and=C2=A0</span>ref money.=C2=A0 13 R=
+L , 14 RL</font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt=
+;line-height:15.6933px"><font face=3D"tahoma, sans-serif"><br></font></p><p=
+ class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px=
+"><font face=3D"tahoma, sans-serif"><b>TOURNAMENTS-</b></font></p><p class=
+=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><fon=
+t face=3D"tahoma, sans-serif"><br></font></p><p class=3D"MsoNormal" style=
+=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sa=
+ns-serif"><b>TOURNAMENTS=C2=A0</b>are=C2=A0<a href=3D"https://docs.google.c=
+om/spreadsheets/d/1qk3jaFgBlSzbXn737A_-VL7Wn3wk8kuVpkBxxvSorsE/edit?gid=3D7=
+16576660#gid=3D716576660" target=3D"_blank">HERE</a>=C2=A0to the left of th=
+e training schedule.</font></p><p class=3D"MsoNormal" style=3D"margin:0in 0=
+in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=A0=
+ I will apply to tournaments.</font></p><p class=3D"MsoNormal" style=3D"mar=
+gin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sans-seri=
+f">=C2=A0 When schedules come out<span class=3D"gmail_default" style=3D"fon=
+t-family:tahoma,sans-serif">,</span> <b><u>please wait</u></b> before enter=
+ing in <span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif=
+"></span>S<span class=3D"gmail_default" style=3D"font-family:tahoma,sans-se=
+rif">procket</span> or sending to parents (the first couple <span class=3D"=
+gmail_default" style=3D"font-family:tahoma,sans-serif">of=C2=A0</span>days<=
+span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">,</spa=
+n> schedules change <span class=3D"gmail_default" style=3D"font-family:taho=
+ma,sans-serif"></span>a<span class=3D"gmail_default" style=3D"font-family:t=
+ahoma,sans-serif"> lot</span>)</font></p><p class=3D"MsoNormal" style=3D"ma=
+rgin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sans-ser=
+if">=C2=A0 =C2=A0<span class=3D"gmail_default" style=3D"font-family:tahoma,=
+sans-serif"></span>A<span class=3D"gmail_default" style=3D"font-family:taho=
+ma,sans-serif">fter</span> the FINAL schedule<span class=3D"gmail_default" =
+style=3D"font-family:tahoma,sans-serif">,</span> then send and enter in <sp=
+an class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif"></span>S=
+<span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">prock=
+et</span>.</font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001p=
+t;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=A0Checkin- I=
+ will get with you and let you know how each tournament is handling their <=
+span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif"></span=
+>c<span class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">hec=
+k-in</span> and what I can help with.</font></p><p class=3D"MsoNormal" styl=
+e=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><br></p><p class=3D"Mso=
+Normal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><br></p><p =
+class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"=
+><font face=3D"tahoma, sans-serif"><br></font></p><p class=3D"MsoNormal" st=
+yle=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma,=
+ sans-serif"><b><span><span>MANAGER</span></span>=C2=A0CHECKS:</b></font></=
+p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.69=
+33px"><font face=3D"tahoma, sans-serif">=C2=A0</font></p><p class=3D"MsoNor=
+mal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"=
+tahoma, sans-serif">=C2=A0</font></p><p class=3D"MsoNormal" style=3D"margin=
+:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=
+<a href=3D"https://docs.google.com/spreadsheets/d/1qk3jaFgBlSzbXn737A_-VL7W=
+n3wk8kuVpkBxxvSorsE/edit#gid=3D2026964023" target=3D"_blank">Club schedule<=
+/a></font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-=
+height:15.6933px">Google Doc.</p><p class=3D"MsoNormal" style=3D"margin:0in=
+ 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sans-serif">=C2=
+=A0</font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-=
+height:15.6933px"><font face=3D"tahoma, sans-serif">The training schedule<s=
+pan class=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">:</span=
+></font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-he=
+ight:15.6933px"></p><ul><li style=3D"margin-left:15px"><font face=3D"tahoma=
+, sans-serif">Schedule is our (coaches/office/<span><span>managers</span></=
+span>/families) central location of team schedules.<span class=3D"gmail_def=
+ault" style=3D"font-family:tahoma,sans-serif"> This is our &quot;got to sch=
+edule&quot;</span></font></li><li style=3D"margin-left:15px"><font face=3D"=
+tahoma, sans-serif">If you notice something wrong or off<span class=3D"gmai=
+l_default" style=3D"font-family:tahoma,sans-serif">,</span> please=C2=A0<b>=
+let me know asap.=C2=A0=C2=A0<a href=3D"mailto:information@fcwisocnsinsocce=
+r.com" style=3D"color:blue" target=3D"_blank">information@fcwisocnsinsoccer=
+.com</a></b></font></li><li style=3D"margin-left:15px"><font face=3D"tahoma=
+, sans-serif">You can download the schedule and sort.</font></li><li style=
+=3D"margin-left:15px"><font face=3D"tahoma, sans-serif">Green line starts a=
+ new week (Monday)</font></li><li style=3D"margin-left:15px"><font face=3D"=
+tahoma, sans-serif">If you put cursor over field name it will bring up addr=
+ess</font></li><li style=3D"margin-left:15px"><font face=3D"tahoma, sans-se=
+rif">If you click on the location name it will come up with direction to fi=
+eld.</font></li><li style=3D"margin-left:15px"><font face=3D"tahoma, sans-s=
+erif">Sometimes<span class=3D"gmail_default" style=3D"font-family:tahoma,sa=
+ns-serif">,</span> when available<span class=3D"gmail_default" style=3D"fon=
+t-family:tahoma,sans-serif">,</span> if you click on field #<span class=3D"=
+gmail_default" style=3D"font-family:tahoma,sans-serif">,</span> it will com=
+e up with a field map.</font></li></ul><div><font face=3D"tahoma, sans-seri=
+f"><b>Sprocket-</b></font></div><div><font face=3D"tahoma, sans-serif">You =
+are all &quot;<span><span>managers</span></span>&quot; of your team on spro=
+cket right now.</font></div><div><font face=3D"tahoma, sans-serif"><span cl=
+ass=3D"gmail_default" style=3D"font-family:tahoma,sans-serif">I have loaded=
+ in all teams training and tournaments.</span></font></div><div><font face=
+=3D"tahoma, sans-serif">You can communicate off the app or you can use the =
+software on your computer/tablet.</font></div><div><font face=3D"tahoma, sa=
+ns-serif">You can add=C2=A0 to your calendar (uniform will need to be put i=
+n for games)</font></div><div><font face=3D"tahoma, sans-serif">You can add=
+/delete/cancel when needed.</font></div><div><font face=3D"tahoma, sans-ser=
+if">You should be able to add club pass players to your team as guest for c=
+ommunication on app<span class=3D"gmail_default" style=3D"font-family:tahom=
+a,sans-serif"> but if not please email to add.</span></font></div><div><fon=
+t face=3D"tahoma, sans-serif"><br></font></div><div><font face=3D"tahoma, s=
+ans-serif">** I need scores sent to me=C2=A0<a href=3D"mailto:information@f=
+cwisconsinsoccer.com" target=3D"_blank">information@fcwisconsinsoccer.com</=
+a>.=C2=A0 =C2=A0I will NOT use sprocket scores because this score can be al=
+tered by others.</font></div><div><font face=3D"tahoma, sans-serif"><br></f=
+ont></div><p></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;li=
+ne-height:15.6933px"><font face=3D"tahoma, sans-serif">R<span class=3D"gmai=
+l_default" style=3D"font-family:tahoma,sans-serif">eferee fees and collecti=
+ons I will email in Mid August.=C2=A0 We will not have any league games bef=
+ore 9/5</span></font></p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0=
+001pt;line-height:15.6933px"><font face=3D"tahoma, sans-serif"><br></font><=
+/p><p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6=
+933px"><font face=3D"tahoma, sans-serif">=C2=A0</font></p><p class=3D"MsoNo=
+rmal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D=
+"tahoma, sans-serif">This is enough to digest for now.</font></p><p class=
+=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><fon=
+t face=3D"tahoma, sans-serif">=C2=A0</font></p><p class=3D"MsoNormal" style=
+=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sa=
+ns-serif">Please let me know if you have any questions.</font></p><p class=
+=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><fon=
+t face=3D"tahoma, sans-serif">=C2=A0</font></p><p class=3D"MsoNormal" style=
+=3D"margin:0in 0in 0.0001pt;line-height:15.6933px"><font face=3D"tahoma, sa=
+ns-serif">Thank you for all your help!</font></p></div><div><br></div><span=
+ class=3D"gmail_signature_prefix">-- </span><br><div dir=3D"ltr" class=3D"g=
+mail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div di=
+r=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"lt=
+r"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div=
+ dir=3D"ltr">----</div><div dir=3D"ltr">Leanne Talbert<div>FC Wisconsin</di=
+v><div>Boys Admin.</div><div><br></div><div><div><p class=3D"MsoNormal"><br=
+></p>
+
+<p class=3D"MsoNormal"><b>#FCWPLAYINGFORWARD</b></p>
+
+<p class=3D"MsoNormal"><b><span style=3D"color:red">#FCWSUPERCIRRULIUM</spa=
+n></b></p>
+
+<p class=3D"MsoNormal"><b><span style=3D"color:#4472c4">#FCWTALENTEDCOACHES=
+</span></b></p>
+
+<p class=3D"MsoNormal"><b><span style=3D"color:#538135">#FCWPASSIONATEPLAYE=
+RS</span></b></p>
+
+<p class=3D"MsoNormal"><b>#FCWYOUAREFAMILY</b></p><p class=3D"MsoNormal"><b=
+><img width=3D"69" height=3D"96" src=3D"https://ci3.googleusercontent.com/m=
+ail-sig/AIorK4wDfCqOounAcYbmAEpA73GbpsByZg9U0IVuU-1J4Qd3zqX5eNbMwd3xnYaHKFw=
+rARdLcq6Mmd90u16U"><br></b></p></div></div><div><br></div><div><font color=
+=3D"#000000"><b>FCW Field (Germantown) information:</b>=C2=A0<a href=3D"htt=
+p://fcwisconsin.com/field-facility-location" target=3D"_blank">http://fcwis=
+consin.com/field-facility-location</a><br></font></div><div><font color=3D"=
+#000000"><b>Directions to our fields click</b><a href=3D"https://www.google=
+.com/maps/dir//FC+Wisconsin+Soccer,+W+Fond+Du+Lac+Ave,+Germantown,+WI+53022=
+/@43.1995956,-88.0828281,15z/data=3D!4m9!4m8!1m0!1m5!1m1!1s0x8804fc2cfe6d5c=
+05:0x6dc0f41504f03e87!2m2!1d-88.0828281!2d43.1995956!3e0" target=3D"_blank"=
+>=C2=A0HERE</a></font></div></div></div><div><font color=3D"#000000">******=
+*</font></div><div><b><font color=3D"#38761d">&gt; FCW NORTH Field-(Ashwaub=
+enon) </font><a href=3D"https://www.greenbay.com/directory/capital-credit-u=
+nion-park/" target=3D"_blank">Capital Credit Union Park Stadium</a></b></di=
+v><div><div><font color=3D"#000000">*******</font></div><div><b><font color=
+=3D"#ff0000">&gt; FCW WEST Field-(Delafield)=C2=A0<a href=3D"https://www.go=
+ogle.com/maps/dir//Sports+Commons,+Silvernail+Rd,+Waukesha,+WI+53188/@43.16=
+46446,-88.3595744,11z/data=3D!4m9!4m8!1m0!1m5!1m1!1s0x8805b1b4eb1ec9b3:0xb3=
+cf9de13af5f6b2!2m2!1d-88.3467012!2d43.0479572!3e0?entry=3Dttu" target=3D"_b=
+lank">Delafield Sports Common</a></font></b></div><div><b><font color=3D"#f=
+f0000">Directions to our field click=C2=A0<a href=3D"https://www.google.com=
+/maps/dir//Sports+Commons,+Silvernail+Rd,+Waukesha,+WI+53188/@43.1646446,-8=
+8.3595744,11z/data=3D!4m9!4m8!1m0!1m5!1m1!1s0x8805b1b4eb1ec9b3:0xb3cf9de13a=
+f5f6b2!2m2!1d-88.3467012!2d43.0479572!3e0?entry=3Dttu" target=3D"_blank">HE=
+RE</a></font></b></div></div><br><div><br></div></div></div></div></div></d=
+iv></div></div></div></div></div></div>
+</div>
+</div>
+
+--000000000000c73c75063ac6881e--

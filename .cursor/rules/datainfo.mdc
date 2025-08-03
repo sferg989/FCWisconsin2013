@@ -1,0 +1,59 @@
+---
+alwaysApply: true
+---
+# FC Wisconsin 2013 Document Rules
+
+## Document Descriptions
+
+### `13UB RCP.eml` - Team Structure Communication
+- **Purpose**: Official communication from FC Wisconsin Boys Admin explaining specific team organization
+- **Content**: Details about how the 13UB RCP team is structured, including:
+  - Team composition (players from Germantown and West locations)
+  - Integration of West players as full-time team members
+  - Competition level adjustments (competing at 14UB level)
+  - Goalkeeper sharing arrangements between teams
+  - Administrative contact information and facility locations
+
+### `contactInfo.csv` - Team Contact Database
+- **Purpose**: Complete contact roster for team members and families
+- **Content**: Comprehensive contact information including:
+  - Player names and jersey numbers
+  - Parent/guardian contact details (phone numbers, emails)
+  - Emergency contact information
+  - Address information for team communications
+
+### `ManagerInfo.eml` - Team Management Guidelines
+- **Purpose**: Instructional documentation for team managers outlining responsibilities and requirements
+- **Content**: Detailed guidance on team management including:
+  - Manager role expectations and duties
+  - Administrative requirements and deadlines
+  - Communication protocols with players, parents, and club
+  - Event coordination and scheduling responsibilities
+  - Club policies and procedures managers must follow
+
+### `practiceSchedule.csv` - Practice Schedule Database
+- **Purpose**: Complete practice scheduling information for all teams
+- **Content**: Detailed practice arrangements including:
+  - Team identifiers and age groups
+  - Practice days, times, and durations
+  - Field/venue assignments for each practice
+  - Seasonal scheduling patterns
+  - Coach and team contact information
+
+### `teamschedules.csv` - Game and Tournament Schedule
+- **Purpose**: Complete competitive schedule for games and tournaments
+- **Content**: Match and tournament information including:
+  - Game dates, times, and locations
+  - Opponent team information
+  - Tournament details and brackets
+  - Home/away designations
+  - Result tracking and standings
+
+### `venues.csv` - Field and Facility Database
+- **Purpose**: Directory of all possible playing fields and facilities
+- **Content**: Venue information including:
+  - Field names and identifiers
+  - Location addresses and directions
+  - Field specifications and surface types
+  - Facility amenities and restrictions
+  - Contact information for venue coordination
