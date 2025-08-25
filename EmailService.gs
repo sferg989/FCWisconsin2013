@@ -62,7 +62,7 @@ function createHtmlTemplate(practicesHtml, gamesHtml) {
     ${practicesHtml || `<p><em>No practices found for this week.</em></p>`}
     <hr>
 
-    <p><strong>Upcoming Games</strong></p>
+    <p><strong>League Schedule</strong></p>
     ${gamesHtml || `<p><em>No upcoming games scheduled.</em></p>`}
     <hr>
 
@@ -73,10 +73,6 @@ function createHtmlTemplate(practicesHtml, gamesHtml) {
       </li>
       <li><strong>Racine Lighthouse Classic</strong> – <strong>Oct 3–5</strong></li>
     </ul>
-    <hr>
-
-    <p><strong>League Schedule</strong></p>
-    <p>Once the league schedule is finalized, I'll upload it to <strong>Sprocket Sports</strong> and send out an update.</p>
     <hr>
 
     <p>If you have any questions, feel free to reach out.<br>
@@ -108,7 +104,7 @@ This Week's Practices
 ${practicesText || "- No practices found for this week."}
 ------------------------------
 
-Upcoming Games
+League Schedule
 ${gamesText || "- No upcoming games scheduled."}
 ------------------------------
 
@@ -116,10 +112,6 @@ Tournaments
 - EBU Select Cup – Sept 19–21
   (Schedule will be added to Sprocket Sports as soon as it's released.)
 - Racine Lighthouse Classic – Oct 3–5
-------------------------------
-
-League Schedule
-Once the league schedule is finalized, I'll upload it to Sprocket Sports and send out an update.
 ------------------------------
 
 If you have any questions, feel free to reach out.
