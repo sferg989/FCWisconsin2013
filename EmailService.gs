@@ -25,19 +25,20 @@ function generateSubject() {
 /**
  * Generates both HTML and plain text email templates
  */
-function generateEmailTemplates(practices) {
+function generateEmailTemplates(practices, upcomingGames) {
   const { htmlList, textList } = renderPractices(practices);
+  const { htmlList: gamesHtml, textList: gamesText } = renderUpcomingGames(upcomingGames);
   
   return {
-    htmlBody: createHtmlTemplate(htmlList),
-    plainText: createPlainTextTemplate(textList)
+    htmlBody: createHtmlTemplate(htmlList, gamesHtml),
+    plainText: createPlainTextTemplate(textList, gamesText)
   };
 }
 
 /**
  * Creates the HTML email template
  */
-function createHtmlTemplate(practicesHtml) {
+function createHtmlTemplate(practicesHtml, gamesHtml) {
   return `
   <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.5; color:#111; max-width:680px">
     <p>Hi All,</p>
@@ -59,6 +60,10 @@ function createHtmlTemplate(practicesHtml) {
 
     <p><strong>This Week's Practices</strong></p>
     ${practicesHtml || `<p><em>No practices found for this week.</em></p>`}
+    <hr>
+
+    <p><strong>Upcoming Games</strong></p>
+    ${gamesHtml || `<p><em>No upcoming games scheduled.</em></p>`}
     <hr>
 
     <p><strong>Tournaments</strong></p>
@@ -84,7 +89,7 @@ function createHtmlTemplate(practicesHtml) {
 /**
  * Creates the plain text email template
  */
-function createPlainTextTemplate(practicesText) {
+function createPlainTextTemplate(practicesText, gamesText) {
   return `Hi All,
 
 A few quick reminders and important dates to help everyone stay organized.
@@ -101,6 +106,10 @@ Goalkeeper Training
 
 This Week's Practices
 ${practicesText || "- No practices found for this week."}
+------------------------------
+
+Upcoming Games
+${gamesText || "- No upcoming games scheduled."}
 ------------------------------
 
 Tournaments

@@ -20,7 +20,8 @@ function createWeeklyDraft() {
   const emails = getRecipientEmails();
   const subject = generateSubject();
   const practices = getPracticesForCurrentWeek();
-  const { htmlBody, plainText } = generateEmailTemplates(practices);
+  const upcomingGames = getUpcomingGames();
+  const { htmlBody, plainText } = generateEmailTemplates(practices, upcomingGames);
 
   createEmailDraft(emails, subject, plainText, htmlBody);
   incrementWeekCounter(weeksCreated);
@@ -43,7 +44,10 @@ function testEmailGeneration() {
     const practices = getPracticesForCurrentWeek();
     console.log(`Found ${practices.length} practices this week`);
     
-    const { htmlBody, plainText } = generateEmailTemplates(practices);
+    const upcomingGames = getUpcomingGames();
+    console.log(`Found ${upcomingGames.length} upcoming games`);
+    
+    const { htmlBody, plainText } = generateEmailTemplates(practices, upcomingGames);
     console.log("Email templates generated successfully");
     
     console.log("Test completed successfully!");
@@ -51,6 +55,7 @@ function testEmailGeneration() {
       recipientCount: emails.length,
       subject: subject,
       practiceCount: practices.length,
+      gameCount: upcomingGames.length,
       success: true
     };
   } catch (error) {

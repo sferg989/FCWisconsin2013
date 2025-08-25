@@ -73,6 +73,77 @@ function sortPracticesByDateTime_(practices) {
 }
 
 /**
+ * Gets upcoming games for the 13UB RCP team from the team schedules sheet
+ */
+function getUpcomingGames() {
+  const gameData = getTeamScheduleData_();
+  const upcomingGames = filterUpcomingGamesForTeam_(gameData);
+  
+  return sortGamesByDate_(upcomingGames);
+}
+
+/**
+ * Retrieves raw data from the team schedules sheet
+ */
+function getTeamScheduleData_() {
+  const spreadsheet = SpreadsheetApp.openById(CONFIG.spreadsheetId);
+  const sheet = spreadsheet.getSheetByName("Team Schedules");
+  
+  if (!sheet) {
+    throw new Error('Sheet "Team Schedules" not found');
+  }
+
+  const lastRow = sheet.getLastRow();
+  if (lastRow < 2) return [];
+
+  // Get data from row 2 onwards, columns A through H
+  return sheet.getRange(2, 1, lastRow - 1, 8).getValues();
+}
+
+/**
+ * Filters game data for upcoming games of the 13UB RCP team that have an opponent
+ */
+function filterUpcomingGamesForTeam_(sheetData) {
+  const games = [];
+  const today = new Date();
+  const todayMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  
+  sheetData.forEach(row => {
+    const [dateCell, startTime, , teamName, opponent, , location, field] = row;
+    
+    // Filter for 13UB RCP team
+    if (String(teamName || "").trim() !== CONFIG.teamName) return;
+    
+    // Must have an opponent (VS. column)
+    const opponentName = String(opponent || "").trim();
+    if (!opponentName) return;
+    
+    const gameDate = coerceToDate_(dateCell, CONFIG.timeZone);
+    if (!gameDate) return;
+    
+    // Only include upcoming games (today or later)
+    if (gameDate >= todayMidnight) {
+      games.push({
+        date: new Date(gameDate),
+        time: startTime,
+        opponent: opponentName,
+        location: String(location || "").trim(),
+        field: String(field || "").trim()
+      });
+    }
+  });
+  
+  return games;
+}
+
+/**
+ * Sorts games by date
+ */
+function sortGamesByDate_(games) {
+  return games.sort((a, b) => a.date - b.date);
+}
+
+/**
  * Renders practices into HTML and text formats for email
  */
 function renderPractices(practices) {
@@ -94,6 +165,37 @@ function renderPractices(practices) {
     
     const htmlItem = `<li><strong>${dateString}</strong>: ${timeRange}${locationText}</li>`;
     const textItem = `- ${dateString}: ${timeRange}${locationText}`;
+
+    htmlItems.push(htmlItem);
+    textItems.push(textItem);
+  });
+
+  return {
+    htmlList: `<ul>${htmlItems.join("\n")}</ul>`,
+    textList: textItems.join("\n")
+  };
+}
+
+/**
+ * Renders upcoming games into HTML and text formats for email
+ */
+function renderUpcomingGames(games) {
+  if (!games || games.length === 0) {
+    return { htmlList: "", textList: "" };
+  }
+
+  const htmlItems = [];
+  const textItems = [];
+
+  games.forEach(game => {
+    const dateString = formatLocal_(game.date, "EEE, MMM d");
+    const timeString = game.time ? formatTimeFromMinutes_(coerceToTimeMinutes_(game.time)) : "TBA";
+    const opponent = game.opponent;
+    const location = game.location || "TBA";
+    const field = game.field ? ` (${game.field})` : "";
+    
+    const htmlItem = `<li><strong>${dateString}</strong> at ${timeString} vs ${opponent}<br><em>${location}${field}</em></li>`;
+    const textItem = `- ${dateString} at ${timeString} vs ${opponent}\n  ${location}${field}`;
 
     htmlItems.push(htmlItem);
     textItems.push(textItem);
