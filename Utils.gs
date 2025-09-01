@@ -119,3 +119,32 @@ function getCurrentWeekWindow_() {
   const today = new Date();
   return getWeekWindow_(today, CONFIG.weekStartsOn, CONFIG.timeZone);
 }
+
+/**
+ * Calculates the next Monday at 6:30 AM from the current date/time
+ */
+function getNextMondayAt630AM_() {
+  const now = new Date();
+  const currentDay = now.getDay(); // 0=Sunday, 1=Monday, ..., 6=Saturday
+  
+  // Calculate days to add to get to next Monday
+  let daysToAdd;
+  if (currentDay === 0) { // Sunday
+    daysToAdd = 1;
+  } else if (currentDay === 1) { // Monday
+    // If it's Monday but already past 6:30 AM, schedule for next Monday
+    if (now.getHours() > 6 || (now.getHours() === 6 && now.getMinutes() >= 30)) {
+      daysToAdd = 7;
+    } else {
+      daysToAdd = 0; // Today at 6:30 AM
+    }
+  } else { // Tuesday through Saturday
+    daysToAdd = 8 - currentDay; // Days until next Monday
+  }
+  
+  const nextMonday = new Date(now);
+  nextMonday.setDate(now.getDate() + daysToAdd);
+  nextMonday.setHours(6, 30, 0, 0); // Set to 6:30 AM
+  
+  return nextMonday;
+}

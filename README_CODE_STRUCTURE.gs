@@ -39,7 +39,8 @@
  *    - Schedule automation
  * 
  * 🎯 Main.gs
- *    - Primary entry points (createWeeklyDraft, startSchedule)
+ *    - Primary entry points (createWeeklyDraft, scheduleWeeklyEmail, startSchedule)
+ *    - Email scheduling and management functions
  *    - Testing and debugging functions
  *    - High-level orchestration
  * 
@@ -48,9 +49,12 @@
  * 
  * 1. Run startSchedule() to begin automated weekly emails
  * 2. Run createWeeklyDraft() to manually create a draft
- * 3. Run testEmailGeneration() to test without creating drafts
- * 4. Run checkCurrentWeekPractices() to debug schedule issues
- * 5. Run checkContactLabelRecipients() to debug contact issues
+ * 3. Run scheduleWeeklyEmail() to schedule email for next Monday at 6:30 AM
+ * 4. Run checkScheduledEmail() to see if an email is scheduled
+ * 5. Run cancelScheduledEmail() to cancel a scheduled email
+ * 6. Run testEmailGeneration() to test without creating drafts
+ * 7. Run checkCurrentWeekPractices() to debug schedule issues
+ * 8. Run checkContactLabelRecipients() to debug contact issues
  * 
  * BENEFITS OF THIS STRUCTURE:
  * ===========================

@@ -136,3 +136,72 @@ function createEmailDraft(emails, subject, plainText, htmlBody) {
     GmailApp.createDraft(recipients, subject, plainText, { htmlBody });
   }
 }
+
+/**
+ * Schedules an email to be sent at the next Monday at 6:30 AM
+ */
+function scheduleEmail(emails, subject, plainText, htmlBody) {
+  const scheduledTime = getNextMondayAt630AM_();
+  const recipients = emails.join(",");
+  
+  // Create a draft first
+  let draft;
+  if (CONFIG.useBcc) {
+    draft = GmailApp.createDraft("", subject, plainText, { 
+      bcc: recipients, 
+      htmlBody 
+    });
+  } else {
+    draft = GmailApp.createDraft(recipients, subject, plainText, { htmlBody });
+  }
+  
+  // Schedule the draft to be sent
+  const draftId = draft.getId();
+  
+  // Create a time-based trigger to send the email at the scheduled time
+  ScriptApp.newTrigger("sendScheduledDraft")
+    .timeBased()
+    .at(scheduledTime)
+    .create();
+  
+  // Store the draft ID so we can send it later
+  const props = PropertiesService.getScriptProperties();
+  props.setProperty("SCHEDULED_DRAFT_ID", draftId);
+  props.setProperty("SCHEDULED_SEND_TIME", scheduledTime.toISOString());
+  
+  console.log(`Email scheduled to send on ${scheduledTime.toLocaleString("en-US", { timeZone: CONFIG.timeZone })}`);
+  
+  return {
+    draftId: draftId,
+    scheduledTime: scheduledTime
+  };
+}
+
+/**
+ * Sends the scheduled draft email
+ * Called automatically by trigger at the scheduled time
+ */
+function sendScheduledDraft() {
+  const props = PropertiesService.getScriptProperties();
+  const draftId = props.getProperty("SCHEDULED_DRAFT_ID");
+  
+  if (!draftId) {
+    console.error("No scheduled draft ID found");
+    return;
+  }
+  
+  try {
+    const draft = GmailApp.getDraft(draftId);
+    draft.send();
+    
+    console.log(`Scheduled email sent successfully at ${new Date().toLocaleString("en-US", { timeZone: CONFIG.timeZone })}`);
+    
+    // Clean up stored properties
+    props.deleteProperty("SCHEDULED_DRAFT_ID");
+    props.deleteProperty("SCHEDULED_SEND_TIME");
+    
+  } catch (error) {
+    console.error("Error sending scheduled draft:", error.message);
+    throw error;
+  }
+}
