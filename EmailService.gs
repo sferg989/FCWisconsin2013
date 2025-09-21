@@ -68,9 +68,6 @@ function createHtmlTemplate(practicesHtml, gamesHtml) {
 
     <p><strong>Tournaments</strong></p>
     <ul>
-      <li><strong>EBU Select Cup</strong> – <strong>Sept 19–21</strong><br>
-        <em>(Schedule will be added to Sprocket Sports as soon as it's released.)</em>
-      </li>
       <li><strong>Racine Lighthouse Classic</strong> – <strong>Oct 3–5</strong></li>
     </ul>
     <hr>
@@ -109,9 +106,8 @@ ${gamesText || "- No upcoming games scheduled."}
 ------------------------------
 
 Tournaments
-- EBU Select Cup – Sept 19–21
-  (Schedule will be added to Sprocket Sports as soon as it's released.)
 - Racine Lighthouse Classic – Oct 3–5
+(Schedule will be added to Sprocket Sports as soon as it's released.)
 ------------------------------
 
 If you have any questions, feel free to reach out.
